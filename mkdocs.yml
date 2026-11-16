@@ -57,7 +57,19 @@ nav:
   - 論文紹介: papers/index.md
   - 講義ノート:
       - courses/index.md
-      - 量子化学の理論: courses/qc-theory/index.md
+      - 量子化学の理論:
+          - courses/qc-theory/index.md
+          - "第 1 回　量子化学で解きたい方程式：Born–Oppenheimer 近似と電子のハミルトニアン": courses/qc-theory/01-born-oppenheimer.md
+          - "第 2 回　決定子とパウリの原理": courses/qc-theory/02-determinants.md
+          - "第 3 回　Hartree–Fock 法のおさらい": courses/qc-theory/03-hartree-fock.md
+          - "第 4 回　第二量子化：生成・消滅演算子": courses/qc-theory/04-second-quantization.md
+          - "第 5 回　スピン：$\\hat S^2$、決定子と配置状態関数（CSF）": courses/qc-theory/05-spin.md
+          - "第 6 回　基底関数": courses/qc-theory/06-basis-sets.md
+          - "第 7 回　電子相関とは：動的相関と静的相関": courses/qc-theory/07-electron-correlation.md
+          - "第 8 回　配置間相互作用（CI）": courses/qc-theory/08-configuration-interaction.md
+          - "第 9 回　摂動論：MP2": courses/qc-theory/09-mp2.md
+          - "第 10 回　結合クラスター法：CCSD(T)": courses/qc-theory/10-coupled-cluster.md
+          - "第 11 回　局所相関法：DLPNO-CCSD(T)": courses/qc-theory/11-dlpno-ccsd-t.md
       - 遷移金属錯体の計算: courses/tm-complexes/index.md
       - 機械学習の基礎:
           - courses/ml-basics/index.md
