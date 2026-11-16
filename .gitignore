@@ -4,3 +4,5 @@ site/
 .venv/
 __pycache__/
 .cache/
+# 毎日の論文紹介の作業用ファイル
+_work/

@@ -1,5 +1,5 @@
-site_name: 量子化学ノート
-site_description: 量子化学の論文紹介と講義ノート（入門から最先端まで）
+site_name: QCLab
+site_description: QCLab：量子化学の論文紹介と講義ノート（入門から最先端まで）
 site_url: https://yugo0323.github.io/qc-notes/
 repo_url: https://github.com/yugo0323/qc-notes
 repo_name: yugo0323/qc-notes
@@ -7,6 +7,7 @@ repo_name: yugo0323/qc-notes
 theme:
   name: material
   language: ja
+  font: false
   features:
     - navigation.tabs
     - navigation.sections
@@ -16,12 +17,12 @@ theme:
     - content.code.copy
   palette:
     - scheme: default
-      primary: indigo
+      primary: custom
       toggle:
         icon: material/weather-night
         name: ダークモードに切り替え
     - scheme: slate
-      primary: indigo
+      primary: custom
       toggle:
         icon: material/weather-sunny
         name: ライトモードに切り替え
@@ -43,6 +44,9 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.arithmatex:
       generic: true
+
+extra_css:
+  - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/mathjax.js

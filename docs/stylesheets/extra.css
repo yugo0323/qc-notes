@@ -1,0 +1,222 @@
+/* QCLab のデザイン：白を基調に、深い青から水色への配色。英字の見出しは大文字で字間を広く。 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap");
+
+:root {
+  --qc-navy: #053a8e;
+  --qc-blue: #225aab;
+  --qc-sky: #36b5e0;
+  --qc-pale: #ebf7fc;
+  --qc-ink: #1a1d24;
+  --qc-sub: #5b6475;
+  --qc-line: #dee0e1;
+  --qc-card: #ffffff;
+  --qc-chip-paper: #c2e9f6;
+  --qc-chip-course: #bfe5cb;
+  --qc-chip-info: #feffe0;
+  --md-text-font: "Roboto", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --md-code-font: "Roboto Mono", ui-monospace, monospace;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--qc-blue);
+  --md-primary-fg-color--light: var(--qc-sky);
+  --md-primary-fg-color--dark: var(--qc-navy);
+  --md-accent-fg-color: var(--qc-sky);
+  --md-typeset-a-color: var(--qc-blue);
+}
+
+[data-md-color-scheme="slate"] {
+  --qc-ink: #e8ebf2;
+  --qc-sub: #a9b1c2;
+  --qc-line: #2c3446;
+  --qc-card: #1b2130;
+  --qc-pale: #162036;
+  --qc-chip-paper: #1d4f66;
+  --qc-chip-course: #285a3a;
+  --qc-chip-info: #57522a;
+  --md-default-bg-color: #11151f;
+  --md-primary-fg-color: #4f86d6;
+  --md-accent-fg-color: var(--qc-sky);
+  --md-typeset-a-color: #7fb4f0;
+}
+
+/* ヘッダー：白地に濃い文字、下にメニューの帯 */
+[data-md-color-scheme="default"] .md-header {
+  background: #ffffff;
+  color: var(--qc-ink);
+  box-shadow: 0 1px 0 var(--qc-line);
+}
+[data-md-color-scheme="default"] .md-header .md-search__input { background: #f1f4f8; color: var(--qc-ink); }
+[data-md-color-scheme="default"] .md-header .md-search__input::placeholder { color: var(--qc-sub); }
+[data-md-color-scheme="default"] .md-header .md-search__icon { color: var(--qc-sub); }
+.md-header__topic:first-child { font-weight: 900; letter-spacing: 0.12em; }
+.md-tabs { background: var(--qc-navy); color: #fff; }
+.md-tabs__link { font-weight: 500; letter-spacing: 0.04em; opacity: 0.85; }
+.md-tabs__link--active, .md-tabs__link:hover { opacity: 1; color: var(--qc-sky); }
+[data-md-color-scheme="slate"] .md-header { background: #0b1222; }
+[data-md-color-scheme="slate"] .md-tabs { background: #0e1a33; }
+
+/* 本文の見出し */
+.md-typeset h1 { font-weight: 700; color: var(--qc-ink); letter-spacing: 0.02em; }
+.md-typeset h2 {
+  font-weight: 700;
+  padding-left: 0.6em;
+  border-left: 4px solid var(--qc-sky);
+}
+.md-typeset table:not([class]) { font-size: 0.72rem; }
+.md-typeset table:not([class]) th { background: var(--qc-pale); }
+
+/* トップページ */
+.qc-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 2.4rem;
+  padding: 3.6rem 2.4rem 3rem;
+  border-radius: 18px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(54, 181, 224, 0.55) 0, rgba(54, 181, 224, 0) 38%),
+    radial-gradient(circle at 70% 85%, rgba(255, 255, 255, 0.12) 0, rgba(255, 255, 255, 0) 30%),
+    linear-gradient(120deg, var(--qc-navy) 0%, var(--qc-blue) 60%, #2f8fd0 100%);
+}
+.qc-hero::after {
+  /* 軌道を思わせる同心円の飾り */
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -90px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.04), 0 0 0 80px rgba(255, 255, 255, 0.03);
+}
+.qc-hero__en {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.6rem, 8vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+.qc-hero__sub {
+  margin: 0.8rem 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.qc-hero__ja { margin: 1.4rem 0 0; font-size: 1rem; font-weight: 500; }
+.md-typeset .qc-hero a.qc-btn {
+  display: inline-block;
+  margin: 1.6rem 0.6rem 0 0;
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--qc-navy);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+.md-typeset .qc-hero a.qc-btn--ghost { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.7); }
+
+.qc-sec { margin: 2.6rem 0 1rem; display: flex; align-items: baseline; gap: 0.9rem; }
+.qc-sec__en {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.16em;
+  color: var(--qc-blue);
+}
+[data-md-color-scheme="slate"] .qc-sec__en { color: #7fb4f0; }
+.qc-sec__ja { font-size: 0.75rem; color: var(--qc-sub); font-weight: 500; }
+
+.qc-pickup {
+  display: block;
+  padding: 1.4rem 1.6rem;
+  border-radius: 14px;
+  background: var(--qc-pale);
+  border: 1px solid var(--qc-line);
+}
+.qc-pickup__title { font-size: 1rem; font-weight: 700; margin: 0.3rem 0; }
+.qc-pickup__meta { font-size: 0.7rem; color: var(--qc-sub); }
+
+.md-typeset ul.qc-news { list-style: none; margin: 0; padding: 0; }
+.md-typeset ul.qc-news li {
+  margin: 0;
+  padding: 0.85rem 0.2rem;
+  border-bottom: 1px solid var(--qc-line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+}
+.qc-news__date { font-family: "Roboto", sans-serif; font-weight: 500; color: var(--qc-sub); min-width: 6.2em; }
+.qc-chip {
+  display: inline-block;
+  min-width: 6.5em;
+  padding: 0.15em 0.8em;
+  border-radius: 3px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--qc-ink);
+}
+.qc-chip--paper { background: var(--qc-chip-paper); }
+.qc-chip--course { background: var(--qc-chip-course); }
+.qc-chip--info { background: var(--qc-chip-info); }
+.md-typeset ul.qc-news li a { flex: 1 1 18rem; color: var(--qc-ink); font-weight: 500; }
+.md-typeset ul.qc-news li a:hover { color: var(--qc-blue); }
+.qc-more { text-align: right; font-size: 0.72rem; margin-top: 0.6rem; }
+
+.qc-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1rem; }
+.md-typeset a.qc-tile {
+  display: block;
+  padding: 1.2rem 1.3rem 1.3rem;
+  border-radius: 14px;
+  background: var(--qc-card);
+  border: 1px solid var(--qc-line);
+  color: var(--qc-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.md-typeset a.qc-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--qc-sky);
+  box-shadow: 0 10px 24px rgba(5, 58, 142, 0.12);
+}
+.qc-tile__en {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--qc-sky);
+  text-transform: uppercase;
+}
+.qc-tile__ja { display: block; margin-top: 0.35rem; font-size: 0.9rem; font-weight: 700; }
+.qc-tile__desc { display: block; margin-top: 0.4rem; font-size: 0.68rem; color: var(--qc-sub); line-height: 1.6; }
+
+/* 論文紹介ページの「この紹介について」 */
+.md-typeset .admonition.note { border-color: var(--qc-sky); }
+
+/* フッター */
+.md-footer { background: var(--qc-navy); }
+.md-footer-meta { background: #042c6b; }
+
+/* 画面には出さないが、読み上げソフトには読ませる見出し */
+.qc-sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* スマホ幅 */
+@media screen and (max-width: 600px) {
+  .qc-hero { padding: 2.4rem 1.4rem 2rem; border-radius: 14px; }
+  .qc-hero__sub { letter-spacing: 0.18em; }
+  .qc-hero::after { width: 220px; height: 220px; right: -80px; top: -80px; }
+  .qc-sec__en { font-size: 1.2rem; }
+  .qc-tiles { grid-template-columns: 1fr; }
+}

@@ -1,10 +1,12 @@
-# main ブランチに push されるたびに、サイトを作り直して GitHub Pages に公開する
+# main ブランチに push されるたびに、サイトを作り直して GitHub Pages に公開する。
+# 毎日の論文紹介（daily-paper.yml）からも呼び出される。
 name: deploy
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -20,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

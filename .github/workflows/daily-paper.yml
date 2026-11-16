@@ -1,0 +1,123 @@
+# 毎朝、新しい論文を集めて、Claude が紹介記事を書き、確認を通ったら公開する。
+name: daily-paper
+
+on:
+  schedule:
+    - cron: "17 20 * * *"   # 毎日 20:17（UTC）＝ 日本時間 5:17
+  workflow_dispatch:         # Actions の画面から手動でも動かせる
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-paper
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    outputs:
+      published: ${{ steps.publish.outputs.published }}
+    steps:
+      # Claude が GitHub の書き込み権限を読めないように、認証情報を残さずに取ってくる
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+
+      - name: 日付を決める（日本時間）
+        run: |
+          echo "DATE=$(TZ=Asia/Tokyo date +%F)" >> "$GITHUB_ENV"
+          echo "YEAR=$(TZ=Asia/Tokyo date +%Y)" >> "$GITHUB_ENV"
+
+      - name: 論文の候補を集める
+        run: python scripts/fetch_candidates.py --out _work/candidates.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install -g @anthropic-ai/claude-code
+
+      - name: Claude が紹介記事を書く
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::warning::secret CLAUDE_CODE_OAUTH_TOKEN が設定されていないので、今日は記事を書きません。"
+            exit 0
+          fi
+          mkdir -p "docs/papers/$YEAR"
+          sed -e "s/{{DATE}}/$DATE/g" -e "s/{{YEAR}}/$YEAR/g" scripts/daily_prompt.md > _work/prompt.md
+          claude -p "$(cat _work/prompt.md)" \
+            --permission-mode dontAsk \
+            --allowedTools "Read" "Glob" "Grep" \
+              "Write(docs/papers/**)" "Edit(docs/papers/**)" \
+              "WebFetch(domain:arxiv.org)" "WebFetch(domain:export.arxiv.org)" \
+              "WebFetch(domain:chemrxiv.org)" "WebFetch(domain:api.crossref.org)" \
+            --output-format text | tail -n 30
+
+      - name: 変更が記事 1 本だけであることを確かめる
+        id: changed
+        run: |
+          git status --porcelain --untracked-files=all | grep -v ' _work/' > _work/changed.txt || true
+          cat _work/changed.txt
+          if [ ! -s _work/changed.txt ]; then
+            echo "今日は記事がありません（関係の深い論文がなかった）。"
+            echo "post=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          post="docs/papers/$YEAR/$DATE.md"
+          if [ "$(wc -l < _work/changed.txt)" -ne 1 ] || ! grep -qx "?? $post" _work/changed.txt; then
+            echo "::error::記事以外のファイルが変わっています。公開を中止します。"
+            exit 1
+          fi
+          echo "post=$post" >> "$GITHUB_OUTPUT"
+
+      - name: 記事を確かめる（論文の実在、題名、必要な見出し）
+        if: steps.changed.outputs.post != ''
+        run: python scripts/check_post.py "${{ steps.changed.outputs.post }}"
+
+      - name: 公開してはいけない言葉がないか確かめる
+        if: steps.changed.outputs.post != ''
+        env:
+          PRIVATE_PATTERNS: ${{ secrets.PRIVATE_PATTERNS }}
+        run: |
+          if [ -n "$PRIVATE_PATTERNS" ] && grep -nIE "$PRIVATE_PATTERNS" "${{ steps.changed.outputs.post }}"; then
+            echo "::error::公開してはいけない言葉が見つかりました。公開を中止します。"
+            exit 1
+          fi
+
+      - name: 一覧とトップページを作り直し、サイトを試しに作る
+        if: steps.changed.outputs.post != ''
+        run: |
+          python scripts/build_index.py
+          mkdocs build --strict
+
+      - name: 公開する（コミットしてプッシュ）
+        id: publish
+        if: steps.changed.outputs.post != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "論文紹介 $DATE"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+          echo "published=true" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: write
+    if: needs.write.outputs.published == 'true'
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
