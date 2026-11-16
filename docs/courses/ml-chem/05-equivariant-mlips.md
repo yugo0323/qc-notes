@@ -12,7 +12,7 @@
     | 5 | MACE：多体のメッセージ |
     | 6 | データ効率がよくなった理由 |
 
-    **前に読んでおく回**：[第 2 回](02-descriptors.md)、[第 4 回](04-early-mlips.md)、機械学習の基礎 第 8 回（準備中）
+    **前に読んでおく回**：[第 2 回](02-descriptors.md)、[第 4 回](04-early-mlips.md)、[機械学習の基礎 第 8 回](../ml-basics/08-invariance-equivariance.md)
 
 ## 1. 不変と等変
 

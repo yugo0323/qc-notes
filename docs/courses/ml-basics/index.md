@@ -11,8 +11,8 @@
 | 3 | [過学習と正則化、データの分け方](03-overfitting-regularization.md) | 入門 |
 | 4 | [カーネル法とガウス過程回帰](04-kernel-gp.md) | 基礎 |
 | 5 | [ニューラルネットワークと誤差逆伝播](05-neural-networks.md) | 基礎 |
-| 6 | 最適化：確率的勾配降下法と Adam（準備中） | 基礎 |
-| 7 | グラフニューラルネットワーク（準備中） | 発展 |
-| 8 | 対称性を組み込む：不変と等変（準備中） | 発展 |
-| 9 | Transformer と注意機構（準備中） | 発展 |
-| 10 | 不確かさの見積もりと能動学習（準備中） | 発展 |
+| 6 | [最適化：確率的勾配降下法と Adam](06-optimization.md) | 基礎 |
+| 7 | [グラフニューラルネットワーク](07-graph-neural-networks.md) | 発展 |
+| 8 | [対称性を組み込む：不変と等変](08-invariance-equivariance.md) | 発展 |
+| 9 | [Transformer と注意機構](09-transformers.md) | 発展 |
+| 10 | [不確かさの見積もりと能動学習](10-uncertainty-active-learning.md) | 発展 |
