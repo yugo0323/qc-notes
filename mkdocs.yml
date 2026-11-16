@@ -61,7 +61,13 @@ nav:
       - 遷移金属錯体の計算: courses/tm-complexes/index.md
       - 機械学習の基礎: courses/ml-basics/index.md
       - 量子化学のための機械学習: courses/ml-chem/index.md
-      - 計算パッケージの使い方: courses/packages/index.md
+      - 計算パッケージの使い方:
+          - courses/packages/index.md
+          - "第 1 回　計算の流れ：構造を作る、計算する、結果を読む": courses/packages/01-workflow.md
+          - "第 2 回　分子構造の作り方と可視化": courses/packages/02-structures.md
+          - "第 3 回　どのプログラムにも共通すること：電荷、スピン多重度、基底関数、計算方法": courses/packages/03-common-concepts.md
+          - "第 4 回　Gaussian（1）：入力ファイルと構造最適化": courses/packages/04-gaussian-basics.md
+          - "第 5 回　Gaussian（2）：振動解析、熱化学、溶媒効果": courses/packages/05-gaussian-freq-thermo.md
       - 研究の道具:
           - courses/tools/index.md
           - "第 1 回　Linux のコマンドライン": courses/tools/01-linux-command-line.md

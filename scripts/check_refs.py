@@ -119,7 +119,7 @@ def check(path):
         written = title_m.group(1) if title_m else ""
         year_m = re.findall(r"\((?:[^()]*?,\s*)?(\d{4})\)", ref)
         written_year = int(year_m[-1]) if year_m else None
-        doi_m = re.search(r"DOI:\s*\[?(10\.\d{4,9}/[^\s\]\)]+)", ref)
+        doi_m = re.search(r"DOI:\s*\[(10\.\d{4,9}/[^\]\s]+)\]", ref) or re.search(r"DOI:\s*(10\.\d{4,9}/[^\s\]\)]+)", ref)
         isbn_m = re.search(r"ISBN:\s*([0-9Xx\-]{10,17})", ref)
         arx_m = re.search(r"arXiv:(\d{4}\.\d{4,5})", ref)
         if doi_m:
