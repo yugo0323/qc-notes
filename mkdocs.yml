@@ -1,0 +1,63 @@
+site_name: 量子化学ノート
+site_description: 量子化学の論文紹介と講義ノート（入門から最先端まで）
+site_url: https://yugo0323.github.io/qc-notes/
+repo_url: https://github.com/yugo0323/qc-notes
+repo_name: yugo0323/qc-notes
+
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: ダークモードに切り替え
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: ライトモードに切り替え
+
+plugins:
+  - search:
+      separator: '[\s\-\.、。（）「」]+'
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+nav:
+  - ホーム: index.md
+  - 論文紹介: papers/index.md
+  - 講義ノート:
+      - courses/index.md
+      - 量子化学の理論: courses/qc-theory/index.md
+      - 遷移金属錯体の計算: courses/tm-complexes/index.md
+      - 機械学習の基礎: courses/ml-basics/index.md
+      - 量子化学のための機械学習: courses/ml-chem/index.md
+      - 計算パッケージの使い方: courses/packages/index.md
+      - 研究の道具: courses/tools/index.md
+  - 用語集: glossary.md
+  - このサイトについて: about.md

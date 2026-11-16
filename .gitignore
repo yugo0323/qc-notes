@@ -1,0 +1,6 @@
+# 変換で自動的に作られるサイト（GitHub 側で作り直すので保存しない）
+site/
+# Python の作業用ファイル
+.venv/
+__pycache__/
+.cache/
