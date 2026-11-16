@@ -70,7 +70,13 @@ nav:
           - "第 9 回　摂動論：MP2": courses/qc-theory/09-mp2.md
           - "第 10 回　結合クラスター法：CCSD(T)": courses/qc-theory/10-coupled-cluster.md
           - "第 11 回　局所相関法：DLPNO-CCSD(T)": courses/qc-theory/11-dlpno-ccsd-t.md
-      - 遷移金属錯体の計算: courses/tm-complexes/index.md
+      - 遷移金属錯体の計算:
+          - courses/tm-complexes/index.md
+          - "第 1 回　d 軌道と配位子場理論": courses/tm-complexes/01-ligand-field.md
+          - "第 2 回　d 電子の数え方、酸化数、18 電子則": courses/tm-complexes/02-electron-counting.md
+          - "第 3 回　スピン状態：高スピンと低スピン": courses/tm-complexes/03-spin-states.md
+          - "第 4 回　遷移金属の電子相関：静的相関と動的相関": courses/tm-complexes/04-electron-correlation-tm.md
+          - "第 5 回　スピン状態のエネルギー差：なぜ計算が難しいか": courses/tm-complexes/05-spin-state-energetics.md
       - 機械学習の基礎:
           - courses/ml-basics/index.md
           - "第 1 回　機械学習とは：データから関数を作る": courses/ml-basics/01-what-is-ml.md
