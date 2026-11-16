@@ -53,12 +53,13 @@ jobs:
             echo "::warning::secret CLAUDE_CODE_OAUTH_TOKEN が設定されていないので、今日は記事を書きません。"
             exit 0
           fi
+          set -o pipefail   # Claude が失敗したら、この段階も失敗にする
           mkdir -p "docs/papers/$YEAR"
           sed -e "s/{{DATE}}/$DATE/g" -e "s/{{YEAR}}/$YEAR/g" scripts/daily_prompt.md > _work/prompt.md
           claude -p "$(cat _work/prompt.md)" \
             --permission-mode dontAsk \
             --allowedTools "Read" "Glob" "Grep" \
-              "Write(docs/papers/**)" "Edit(docs/papers/**)" \
+              "Edit(docs/papers/**)" \
               "WebFetch(domain:arxiv.org)" "WebFetch(domain:export.arxiv.org)" \
               "WebFetch(domain:chemrxiv.org)" "WebFetch(domain:api.crossref.org)" \
             --output-format text | tail -n 30
@@ -69,7 +70,7 @@ jobs:
           git status --porcelain --untracked-files=all | grep -v ' _work/' > _work/changed.txt || true
           cat _work/changed.txt
           if [ ! -s _work/changed.txt ]; then
-            echo "今日は記事がありません（関係の深い論文がなかった）。"
+            echo "今日は記事がありません（Claude が、関係の深い論文はないと判断した）。"
             echo "post=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
