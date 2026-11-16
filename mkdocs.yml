@@ -80,6 +80,11 @@ nav:
           - "第 3 回　どのプログラムにも共通すること：電荷、スピン多重度、基底関数、計算方法": courses/packages/03-common-concepts.md
           - "第 4 回　Gaussian（1）：入力ファイルと構造最適化": courses/packages/04-gaussian-basics.md
           - "第 5 回　Gaussian（2）：振動解析、熱化学、溶媒効果": courses/packages/05-gaussian-freq-thermo.md
+          - "第 6 回　ORCA（1）：入力ファイルと構造最適化": courses/packages/06-orca-basics.md
+          - "第 7 回　ORCA（2）：振動解析と熱化学": courses/packages/07-orca-freq-thermo.md
+          - "第 8 回　ORCA（3）：DLPNO-CCSD(T) と CASSCF/NEVPT2": courses/packages/08-orca-advanced.md
+          - "第 9 回　GAMESS（1）：入力ファイルの書き方": courses/packages/09-gamess-basics.md
+          - "第 10 回　GAMESS（2）：MRSF-TDDFT で励起状態を計算する": courses/packages/10-gamess-mrsf.md
       - 研究の道具:
           - courses/tools/index.md
           - "第 1 回　Linux のコマンドライン": courses/tools/01-linux-command-line.md

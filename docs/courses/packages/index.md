@@ -10,11 +10,11 @@
 | 3 | [どのプログラムにも共通すること：電荷、スピン多重度、基底関数、計算方法](03-common-concepts.md) | 入門 |
 | 4 | [Gaussian（1）：入力ファイルと構造最適化](04-gaussian-basics.md) | 基礎 |
 | 5 | [Gaussian（2）：振動解析、熱化学、溶媒効果](05-gaussian-freq-thermo.md) | 基礎 |
-| 6 | 第 6 回（準備中）：ORCA（1）：入力ファイルと構造最適化 | 基礎 |
-| 7 | 第 7 回（準備中）：ORCA（2）：振動解析と熱化学 | 基礎 |
-| 8 | 第 8 回（準備中）：ORCA（3）：DLPNO-CCSD(T) と CASSCF/NEVPT2 | 発展 |
-| 9 | 第 9 回（準備中）：GAMESS（1）：入力ファイルの書き方 | 基礎 |
-| 10 | 第 10 回（準備中）：GAMESS（2）：MRSF-TDDFT で励起状態を計算する | 発展 |
+| 6 | [ORCA（1）：入力ファイルと構造最適化](06-orca-basics.md) | 基礎 |
+| 7 | [ORCA（2）：振動解析と熱化学](07-orca-freq-thermo.md) | 基礎 |
+| 8 | [ORCA（3）：DLPNO-CCSD(T) と CASSCF/NEVPT2](08-orca-advanced.md) | 発展 |
+| 9 | [GAMESS（1）：入力ファイルの書き方](09-gamess-basics.md) | 基礎 |
+| 10 | [GAMESS（2）：MRSF-TDDFT で励起状態を計算する](10-gamess-mrsf.md) | 発展 |
 | 11 | 第 11 回（準備中）：PySCF（1）：Python から量子化学計算をする | 基礎 |
 | 12 | 第 12 回（準備中）：PySCF（2）：積分、Fock 行列、密度行列を見る | 基礎 |
 | 13 | 第 13 回（準備中）：xtb と CREST：速い半経験的計算と配座探索 | 基礎 |
