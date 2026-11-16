@@ -117,6 +117,7 @@ jobs:
     needs: write
     if: needs.write.outputs.published == 'true'
     uses: ./.github/workflows/deploy.yml
+    secrets: inherit
     permissions:
       contents: read
       pages: write
