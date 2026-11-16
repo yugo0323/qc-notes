@@ -19,9 +19,9 @@ hide:
 
 <!-- PICKUP:START -->
 <div class="qc-pickup">
-<span class="qc-chip qc-chip--info">お知らせ</span>
-<p class="qc-pickup__title">論文紹介は準備中です</p>
-<p class="qc-pickup__meta">毎朝、新しい論文を 1 本詳しく紹介します。</p>
+<span class="qc-chip qc-chip--paper">論文紹介</span>
+<p class="qc-pickup__title"><a href="papers/2026/2026-11-17/">スピン純粋な MRSF-TDDFT：非共線形カーネルとの統合</a></p>
+<p class="qc-pickup__meta">2026.11.17　ChemRxiv（プレプリント、査読前）</p>
 </div>
 <!-- PICKUP:END -->
 
@@ -29,6 +29,7 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-17/">スピン純粋な MRSF-TDDFT：非共線形カーネルとの統合</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--info">お知らせ</span><a href="about/">サイト名を QCLab にしました</a></li>
 <li><span class="qc-news__date">2026.11.16</span><span class="qc-chip qc-chip--info">お知らせ</span><a href="courses/">講義ノートの目次を公開しました</a></li>
 </ul>
