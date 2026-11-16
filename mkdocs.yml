@@ -62,6 +62,13 @@ nav:
       - 機械学習の基礎: courses/ml-basics/index.md
       - 量子化学のための機械学習: courses/ml-chem/index.md
       - 計算パッケージの使い方: courses/packages/index.md
-      - 研究の道具: courses/tools/index.md
+      - 研究の道具:
+          - courses/tools/index.md
+          - "第 1 回　Linux のコマンドライン": courses/tools/01-linux-command-line.md
+          - "第 2 回　計算機クラスタでジョブを流す（一般的な考え方）": courses/tools/02-cluster-jobs.md
+          - "第 3 回　Python と NumPy": courses/tools/03-python-numpy.md
+          - "第 4 回　結果をグラフにする：Matplotlib": courses/tools/04-matplotlib.md
+          - "第 5 回　Git と GitHub：変更の記録と共有": courses/tools/05-git-github.md
+          - "第 6 回　Markdown と数式の書き方": courses/tools/06-markdown-math.md
   - 用語集: glossary.md
   - このサイトについて: about.md

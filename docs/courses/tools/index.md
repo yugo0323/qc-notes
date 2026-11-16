@@ -5,9 +5,9 @@
 
 | 回 | 題 | 目安 |
 |---|---|---|
-| 1 | Linux のコマンドライン | 入門 |
-| 2 | 計算機クラスタでジョブを流す（一般的な考え方） | 入門 |
-| 3 | Python と NumPy | 入門 |
-| 4 | 結果をグラフにする：Matplotlib | 入門 |
-| 5 | Git と GitHub：変更の記録と共有 | 入門 |
-| 6 | Markdown と数式の書き方 | 入門 |
+| 1 | [Linux のコマンドライン](01-linux-command-line.md) | 入門 |
+| 2 | [計算機クラスタでジョブを流す（一般的な考え方）](02-cluster-jobs.md) | 入門 |
+| 3 | [Python と NumPy](03-python-numpy.md) | 入門 |
+| 4 | [結果をグラフにする：Matplotlib](04-matplotlib.md) | 入門 |
+| 5 | [Git と GitHub：変更の記録と共有](05-git-github.md) | 入門 |
+| 6 | [Markdown と数式の書き方](06-markdown-math.md) | 入門 |
