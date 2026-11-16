@@ -1,5 +1,5 @@
 ---
-title: QCLab
+title: ホーム
 hide:
   - navigation
   - toc
