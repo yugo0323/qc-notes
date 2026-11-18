@@ -63,7 +63,7 @@ nav:
           - "第 2 回　決定子とパウリの原理": courses/qc-theory/02-determinants.md
           - "第 3 回　Hartree–Fock 法のおさらい": courses/qc-theory/03-hartree-fock.md
           - "第 4 回　第二量子化：生成・消滅演算子": courses/qc-theory/04-second-quantization.md
-          - "第 5 回　スピン：$\\hat S^2$、決定子と配置状態関数（CSF）": courses/qc-theory/05-spin.md
+          - "第 5 回　スピン：Ŝ²、決定子と配置状態関数（CSF）": courses/qc-theory/05-spin.md
           - "第 6 回　基底関数": courses/qc-theory/06-basis-sets.md
           - "第 7 回　電子相関とは：動的相関と静的相関": courses/qc-theory/07-electron-correlation.md
           - "第 8 回　配置間相互作用（CI）": courses/qc-theory/08-configuration-interaction.md
@@ -81,6 +81,7 @@ nav:
           - "第 20 回　スピン反転 TDDFT": courses/qc-theory/20-spin-flip-tddft.md
           - "第 21 回　MRSF-TDDFT": courses/qc-theory/21-mrsf-tddft.md
           - "第 22 回　円錐交差と非断熱過程": courses/qc-theory/22-conical-intersections.md
+          - "第 23 回　励起状態の波動関数法：EOM-CCSD、CC2、ADC(2)": courses/qc-theory/23-excited-wavefunction.md
       - 遷移金属錯体の計算:
           - courses/tm-complexes/index.md
           - "第 1 回　d 軌道と配位子場理論": courses/tm-complexes/01-ligand-field.md

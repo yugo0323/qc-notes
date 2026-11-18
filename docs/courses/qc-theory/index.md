@@ -11,7 +11,7 @@ Hartree–Fock 法から、密度汎関数理論、励起状態、多参照理�
 | 2 | [決定子とパウリの原理](02-determinants.md) | 入門 |
 | 3 | [Hartree–Fock 法のおさらい](03-hartree-fock.md) | 基礎 |
 | 4 | [第二量子化：生成・消滅演算子](04-second-quantization.md) | 基礎 |
-| 5 | [スピン：$\hat S^2$、決定子と配置状態関数（CSF）](05-spin.md) | 基礎 |
+| 5 | [スピン：Ŝ²、決定子と配置状態関数（CSF）](05-spin.md) | 基礎 |
 | 6 | [基底関数](06-basis-sets.md) | 基礎 |
 
 ## 第 II 部 電子相関
@@ -49,3 +49,10 @@ Hartree–Fock 法から、密度汎関数理論、励起状態、多参照理�
 | 20 | [スピン反転 TDDFT](20-spin-flip-tddft.md) | 発展 |
 | 21 | [MRSF-TDDFT](21-mrsf-tddft.md) | 発展 |
 | 22 | [円錐交差と非断熱過程](22-conical-intersections.md) | 発展 |
+
+## 第 VI 部 励起状態の発展
+
+| 回 | 題 | 目安 |
+|---|---|---|
+| 23 | [励起状態の波動関数法：EOM-CCSD、CC2、ADC(2)](23-excited-wavefunction.md) | 最先端 |
+| 24 | スピン軌道相互作用と項間交差（準備中） | 発展 |
