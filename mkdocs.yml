@@ -70,6 +70,13 @@ nav:
           - "第 9 回　摂動論：MP2": courses/qc-theory/09-mp2.md
           - "第 10 回　結合クラスター法：CCSD(T)": courses/qc-theory/10-coupled-cluster.md
           - "第 11 回　局所相関法：DLPNO-CCSD(T)": courses/qc-theory/11-dlpno-ccsd-t.md
+          - "第 12 回　多配置 SCF：CASSCF と活性空間の選び方": courses/qc-theory/12-casscf.md
+          - "第 13 回　多参照摂動論：CASPT2 と NEVPT2": courses/qc-theory/13-caspt2-nevpt2.md
+          - "第 14 回　大きな活性空間：DMRG と選択的 CI": courses/qc-theory/14-dmrg-sci.md
+          - "第 15 回　Hohenberg–Kohn の定理と Kohn–Sham 法": courses/qc-theory/15-kohn-sham.md
+          - "第 16 回　汎関数の階段：LDA、GGA、meta-GGA、混成、範囲分離": courses/qc-theory/16-functionals.md
+          - "第 17 回　分散力の補正": courses/qc-theory/17-dispersion.md
+          - "第 18 回　DFT の誤差：自己相互作用誤差と静的相関": courses/qc-theory/18-dft-errors.md
       - 遷移金属錯体の計算:
           - courses/tm-complexes/index.md
           - "第 1 回　d 軌道と配位子場理論": courses/tm-complexes/01-ligand-field.md
@@ -77,6 +84,11 @@ nav:
           - "第 3 回　スピン状態：高スピンと低スピン": courses/tm-complexes/03-spin-states.md
           - "第 4 回　遷移金属の電子相関：静的相関と動的相関": courses/tm-complexes/04-electron-correlation-tm.md
           - "第 5 回　スピン状態のエネルギー差：なぜ計算が難しいか": courses/tm-complexes/05-spin-state-energetics.md
+          - "第 6 回　ベンチマーク（1）：スピン状態のエネルギー": courses/tm-complexes/06-benchmark-spin-states.md
+          - "第 7 回　ベンチマーク（2）：反応エネルギーと反応障壁": courses/tm-complexes/07-benchmark-reactions.md
+          - "第 8 回　汎関数の選び方": courses/tm-complexes/08-functional-choice.md
+          - "第 9 回　局所相関法 DLPNO-CCSD(T) を遷移金属に使うときの注意": courses/tm-complexes/09-dlpno-for-tm.md
+          - "第 10 回　多参照性の診断と多参照法": courses/tm-complexes/10-multireference-tm.md
       - 機械学習の基礎:
           - courses/ml-basics/index.md
           - "第 1 回　機械学習とは：データから関数を作る": courses/ml-basics/01-what-is-ml.md
@@ -96,6 +108,11 @@ nav:
           - "第 3 回　機械学習ポテンシャルの考え方：原子ごとのエネルギーの和": courses/ml-chem/03-mlip-basics.md
           - "第 4 回　初期の機械学習ポテンシャル：Behler–Parrinello、ANI、SchNet": courses/ml-chem/04-early-mlips.md
           - "第 5 回　等変ニューラルネットワークのポテンシャル：NequIP、MACE": courses/ml-chem/05-equivariant-mlips.md
+          - "第 6 回　データセット：どの理論の値を学習しているか": courses/ml-chem/06-datasets.md
+          - "第 7 回　基盤モデル：UMA など、多くの元素と系を 1 つのモデルで扱う": courses/ml-chem/07-foundation-models.md
+          - "第 8 回　Δ 学習：安い計算と高い計算の差を学習する": courses/ml-chem/08-delta-learning.md
+          - "第 9 回　交換相関汎関数の機械学習": courses/ml-chem/09-ml-functionals.md
+          - "第 10 回　機械学習ポテンシャルを研究で使うときの注意：外挿、スピン状態、電荷": courses/ml-chem/10-cautions.md
       - 計算パッケージの使い方:
           - courses/packages/index.md
           - "第 1 回　計算の流れ：構造を作る、計算する、結果を読む": courses/packages/01-workflow.md

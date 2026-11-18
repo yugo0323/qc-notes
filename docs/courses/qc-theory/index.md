@@ -28,18 +28,18 @@ Hartree–Fock 法から、密度汎関数理論、励起状態、多参照理�
 
 | 回 | 題 | 目安 |
 |---|---|---|
-| 12 | 多配置 SCF：CASSCF と活性空間の選び方（準備中） | 発展 |
-| 13 | 多参照摂動論：CASPT2 と NEVPT2（準備中） | 発展 |
-| 14 | 大きな活性空間：DMRG と選択的 CI（準備中） | 最先端 |
+| 12 | [多配置 SCF：CASSCF と活性空間の選び方](12-casscf.md) | 発展 |
+| 13 | [多参照摂動論：CASPT2 と NEVPT2](13-caspt2-nevpt2.md) | 発展 |
+| 14 | [大きな活性空間：DMRG と選択的 CI](14-dmrg-sci.md) | 最先端 |
 
 ## 第 IV 部 密度汎関数理論
 
 | 回 | 題 | 目安 |
 |---|---|---|
-| 15 | Hohenberg–Kohn の定理と Kohn–Sham 法（準備中） | 基礎 |
-| 16 | 汎関数の階段：LDA、GGA、meta-GGA、混成、範囲分離（準備中） | 基礎 |
-| 17 | 分散力の補正（準備中） | 基礎 |
-| 18 | DFT の誤差：自己相互作用誤差と静的相関 | 発展 |
+| 15 | [Hohenberg–Kohn の定理と Kohn–Sham 法](15-kohn-sham.md) | 基礎 |
+| 16 | [汎関数の階段：LDA、GGA、meta-GGA、混成、範囲分離](16-functionals.md) | 基礎 |
+| 17 | [分散力の補正](17-dispersion.md) | 基礎 |
+| 18 | [DFT の誤差：自己相互作用誤差と静的相関](18-dft-errors.md) | 発展 |
 
 ## 第 V 部 励起状態
 
