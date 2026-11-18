@@ -3,15 +3,23 @@
 Hartree–Fock 法から、密度汎関数理論、励起状態、多参照理論、最近の手法までを順に学びます。
 （予定の目次です。書いた回からリンクを付けていきます。）
 
+## 理論の地図
+
+![量子化学の理論の地図](img/map.png)
+
+**図**　この連載の各回の関係。上の段（第 I 部）で、数学、多電子の波動関数、第二量子化、スピンを準備して、Hartree–Fock 法に入ります。Hartree–Fock 法から、決定子 1 個の限界を超える波動関数理論（第 II 部、第 III 部）と、密度で書き直す密度汎関数理論（第 IV 部）に分かれます。励起状態（第 V 部、第 VI 部）は、密度汎関数理論の線形応答と、結合クラスター法の両方から入れます。矢印は「前の回の考え方を使う」ことを表します。順番に読まなくても、知りたい回から矢印をさかのぼれば、必要な前提が分かります。
+
 ## 第 I 部 波動関数の基礎
+
+第 1〜6 回は、Szabo–Ostlund『Modern Quantum Chemistry』の第 1〜3 章の順序に沿っています。Hartree–Fock 法に必要な数学、多電子の波動関数、第二量子化、スピンを準備してから、第 5 回で Hartree–Fock 方程式に入ります。
 
 | 回 | 題 | 目安 |
 |---|---|---|
-| 1 | [量子化学で解きたい方程式：Born–Oppenheimer 近似と電子のハミルトニアン](01-born-oppenheimer.md) | 入門 |
-| 2 | [決定子とパウリの原理](02-determinants.md) | 入門 |
-| 3 | [Hartree–Fock 法のおさらい](03-hartree-fock.md) | 基礎 |
-| 4 | [第二量子化：生成・消滅演算子](04-second-quantization.md) | 基礎 |
-| 5 | [スピン：Ŝ²、決定子と配置状態関数（CSF）](05-spin.md) | 基礎 |
+| 1 | [量子化学のための数学：行列、固有値問題、変分法](01-mathematics.md) | 入門 |
+| 2 | [多電子の波動関数：Born–Oppenheimer 近似と Slater 決定子](02-many-electron-wavefunctions.md) | 入門 |
+| 3 | [演算子と行列要素：Slater–Condon 則と第二量子化](03-second-quantization.md) | 基礎 |
+| 4 | [スピン：Ŝ²、制限・非制限の決定子、CSF](04-spin.md) | 基礎 |
+| 5 | [Hartree–Fock 法：RHF、UHF、ROHF](05-hartree-fock.md) | 基礎 |
 | 6 | [基底関数](06-basis-sets.md) | 基礎 |
 
 ## 第 II 部 電子相関

@@ -15,7 +15,7 @@
     | 8 | 活性空間の選び方 |
     | 9 | CASSCF に足りないもの：動的相関 |
 
-    **前に読んでおく回**：[量子化学の理論 第 7 回](07-electron-correlation.md)、[第 8 回](08-configuration-interaction.md)、[第 4 回](04-second-quantization.md)、[第 5 回](05-spin.md)
+    **前に読んでおく回**：[量子化学の理論 第 7 回](07-electron-correlation.md)、[第 8 回](08-configuration-interaction.md)、[第 3 回](03-second-quantization.md)、[第 4 回](04-spin.md)
 
 !!! tip "物理的なイメージ"
     CASSCF が求めているのは、電子の入り方が一つに決められない軌道の組（活性空間）の中では、あらゆる入り方を混ぜ、同時に軌道の形もその混ざり方に合わせて最適化した波動関数です。活性空間の外の電子は、HF 法と同じく平均の場で扱います。自然軌道の占有数は、各軌道に平均で何個の電子が入っているかを表し、2 や 0 から離れた軌道ほど、入り方が決まらない（静的相関の強い）軌道です。CASSCF は入り方の迷いを正しく表しますが、近くの電子が細かく避け合う動的相関はほとんど含みません。
@@ -40,7 +40,7 @@ $$
 
 ### 1.2 エネルギーを密度行列で書く
 
-エネルギーを軌道と係数の関数として書くために、第 4 回の演算子 $\hat E_{pq} = \sum_\sigma \hat a_{p\sigma}^\dagger \hat a_{q\sigma}$（スピンを変えずに、電子を空間軌道 $q$ から $p$ へ移す演算子）を使います。第 4 回の 4.3 節で見たとおり、ハミルトニアンは
+エネルギーを軌道と係数の関数として書くために、第 3 回の演算子 $\hat E_{pq} = \sum_\sigma \hat a_{p\sigma}^\dagger \hat a_{q\sigma}$（スピンを変えずに、電子を空間軌道 $q$ から $p$ へ移す演算子）を使います。第 3 回の 11.3 節で見たとおり、ハミルトニアンは
 
 $$
 \hat H = \sum_{pq} h_{pq}\, \hat E_{pq} + \frac12 \sum_{pqrs} (pq|rs) \big( \hat E_{pq}\hat E_{rs} - \delta_{qr}\hat E_{ps} \big) + E_\mathrm{nuc}
@@ -126,7 +126,7 @@ H₂ の CAS(2,2) で、配置をすべて書き出します。$M_S = 0$（α �
 
 ![H2 の CAS(2,2) の配置](img/12-cas22.png)
 
-**図 3**　H₂ の CAS(2,2) の 4 つの決定子。左から $\sigma_g^2$、$\sigma_g$ に α・$\sigma_u$ に β、$\sigma_u$ に α・$\sigma_g$ に β、$\sigma_u^2$。中央の 2 つの開殻の決定子は、和をとると一重項の CSF、差をとると三重項の成分になります（第 5 回）。下の数字は、5 節の占有数から読み取った基底状態の係数の大きさです。開殻の一重項は $\Sigma_u^+$ の対称性をもつので、基底状態（$\Sigma_g^+$）には混ざらず、係数は 0 です。
+**図 3**　H₂ の CAS(2,2) の 4 つの決定子。左から $\sigma_g^2$、$\sigma_g$ に α・$\sigma_u$ に β、$\sigma_u$ に α・$\sigma_g$ に β、$\sigma_u^2$。中央の 2 つの開殻の決定子は、和をとると一重項の CSF、差をとると三重項の成分になります（第 4 回）。下の数字は、5 節の占有数から読み取った基底状態の係数の大きさです。開殻の一重項は $\Sigma_u^+$ の対称性をもつので、基底状態（$\Sigma_g^+$）には混ざらず、係数は 0 です。
 
 一重項の配置（CSF）で数えると、$\sigma_g^2$、$\sigma_u^2$、開殻の一重項の 3 個です。このうち基底状態に効くのは、1.3 節の 2 個です。
 
@@ -163,7 +163,7 @@ $$
 N_\mathrm{det} = \binom{m}{n_\alpha} \binom{m}{n_\beta}
 $$
 
-スピンの固有関数（CSF）で数えると、第 5 回の Weyl の公式
+スピンの固有関数（CSF）で数えると、第 4 回の Weyl の公式
 
 $$
 N_\mathrm{CSF}(m, n, S) = \frac{2S+1}{m+1} \binom{m+1}{\frac n2 - S} \binom{m+1}{\frac n2 + S + 1}
@@ -174,7 +174,7 @@ $$
 ```python
 from math import comb
 
-def n_csf(m, n, S):   # Weyl の公式（第 5 回）
+def n_csf(m, n, S):   # Weyl の公式（第 4 回）
     return (2*S + 1) * comb(m + 1, n//2 - S) * comb(m + 1, n//2 + S + 1) // (m + 1)
 
 print(" CAS(n,n)   決定子の数（M_S = 0）   一重項の CSF の数")

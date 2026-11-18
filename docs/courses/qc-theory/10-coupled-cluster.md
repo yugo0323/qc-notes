@@ -13,7 +13,7 @@
     | 6 | 「ゴールドスタンダード」と、その限界 |
     | 7 | T1・D1 診断 |
 
-    **前に読んでおく回**：[量子化学の理論 第 8 回](08-configuration-interaction.md)、[第 9 回](09-mp2.md)、[第 4 回](04-second-quantization.md)
+    **前に読んでおく回**：[量子化学の理論 第 8 回](08-configuration-interaction.md)、[第 9 回](09-mp2.md)、[第 3 回](03-second-quantization.md)
 
 !!! tip "物理的なイメージ"
     結合クラスター法が求めているのは、電子対の避け合い（2 電子励起）を、分子のあちこちで同時に、独立に起こせる形で表した波動関数です。励起演算子の指数関数 $e^{\hat T}$ を展開すると、2 電子励起を 2 か所で同時に起こした 4 電子励起なども、積の形で自動的に入ります。離れた 2 つの分子では、それぞれの中の励起の積がそのまま現れるので、エネルギーが足し算になります（サイズ無矛盾）。(T) は、3 個の電子が同時に避け合う効果を、摂動で安く見積もった補正です。
@@ -24,7 +24,7 @@
 
 ### 1.1 励起演算子
 
-CC 法では、励起配置を**励起演算子**でつくります。第二量子化（[第 4 回](04-second-quantization.md)）の生成演算子 $\hat a_a^\dagger$ はスピン軌道 $a$ に電子を 1 個入れ、消滅演算子 $\hat a_i$ はスピン軌道 $i$ から電子を 1 個取り去ります。そのため、$\hat a_a^\dagger \hat a_i$ を $\Phi_0$ に作用させると、$i$ の電子が $a$ に移った 1 電子励起配置 $\Phi_i^a$ ができます。2 電子励起配置も同じように定義します。
+CC 法では、励起配置を**励起演算子**でつくります。第二量子化（[第 3 回](03-second-quantization.md)）の生成演算子 $\hat a_a^\dagger$ はスピン軌道 $a$ に電子を 1 個入れ、消滅演算子 $\hat a_i$ はスピン軌道 $i$ から電子を 1 個取り去ります。そのため、$\hat a_a^\dagger \hat a_i$ を $\Phi_0$ に作用させると、$i$ の電子が $a$ に移った 1 電子励起配置 $\Phi_i^a$ ができます。2 電子励起配置も同じように定義します。
 
 $$
 \Phi_i^a = \hat a_a^\dagger \hat a_i\, \Phi_0, \qquad
@@ -252,7 +252,7 @@ $$
 
 - $\hat T$ の中の演算子どうしは交換するので、$\hat T$ と $\hat T$ の交換子は 0 です。交換子 $[\cdot, \hat T]$ が 0 にならないのは、$\hat T$ が $\hat H$ の中の生成・消滅演算子と「かみ合う」（添字が一致して $\delta$ が出る）ときだけです。
 - 交換子を 1 回とるごとに、$\hat H$ の演算子が少なくとも 1 個、$\hat T$ とかみ合って使われます。
-- $\hat H$ の 2 電子の部分は、生成・消滅演算子を 4 個しか含みません（[第 4 回](04-second-quantization.md)）。そのため、$\hat T$ とかみ合えるのは 4 回までで、5 重の交換子は 0 になります。
+- $\hat H$ の 2 電子の部分は、生成・消滅演算子を 4 個しか含みません（[第 3 回](03-second-quantization.md)）。そのため、$\hat T$ とかみ合えるのは 4 回までで、5 重の交換子は 0 になります。
 
 このため、振幅方程式は有限の項で書けます。具体的な項の一覧は [Crawford 2000] にあります。
 
@@ -579,7 +579,7 @@ $$
 
 **$\hat T$ の演算子どうしは交換する**：$\hat T$ に含まれるのは、仮想軌道の生成演算子 $\hat a_a^\dagger$ と、占有軌道の消滅演算子 $\hat a_i$ だけです。この 2 種類の間の反交換関係は $\{\hat a_i, \hat a_a^\dagger\} = \delta_{ia} = 0$（占有と仮想は別の軌道）なので、どの 2 つも入れ替えると符号が変わるだけです。$\hat a_a^\dagger\hat a_i$ のような 2 個の組（あるいは 4 個、6 個の組）どうしを入れ替えると、符号の変化が偶数回になるので、符号は変わりません。よって $[\hat T_m, \hat T_n] = 0$ です。
 
-**1 電子演算子の例**：$\hat h = \hat a_p^\dagger \hat a_q$（$p, q$ は任意の軌道）と $\hat T_1$ の 1 項 $\hat a_a^\dagger\hat a_i$ の交換子を計算します。公式 $[\hat a_p^\dagger\hat a_q, \hat a_r^\dagger\hat a_s] = \delta_{qr}\hat a_p^\dagger\hat a_s - \delta_{ps}\hat a_r^\dagger\hat a_q$（第 4 回の反交換関係から出ます）を使うと、
+**1 電子演算子の例**：$\hat h = \hat a_p^\dagger \hat a_q$（$p, q$ は任意の軌道）と $\hat T_1$ の 1 項 $\hat a_a^\dagger\hat a_i$ の交換子を計算します。公式 $[\hat a_p^\dagger\hat a_q, \hat a_r^\dagger\hat a_s] = \delta_{qr}\hat a_p^\dagger\hat a_s - \delta_{ps}\hat a_r^\dagger\hat a_q$（第 3 回の反交換関係から出ます）を使うと、
 
 $$
 [\hat a_p^\dagger\hat a_q, \hat a_a^\dagger\hat a_i] = \delta_{qa}\,\hat a_p^\dagger\hat a_i - \delta_{pi}\,\hat a_a^\dagger\hat a_q

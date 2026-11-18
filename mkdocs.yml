@@ -61,11 +61,11 @@ nav:
       - courses/index.md
       - 量子化学の理論:
           - courses/qc-theory/index.md
-          - "第 1 回　量子化学で解きたい方程式：Born–Oppenheimer 近似と電子のハミルトニアン": courses/qc-theory/01-born-oppenheimer.md
-          - "第 2 回　決定子とパウリの原理": courses/qc-theory/02-determinants.md
-          - "第 3 回　Hartree–Fock 法のおさらい": courses/qc-theory/03-hartree-fock.md
-          - "第 4 回　第二量子化：生成・消滅演算子": courses/qc-theory/04-second-quantization.md
-          - "第 5 回　スピン：Ŝ²、決定子と配置状態関数（CSF）": courses/qc-theory/05-spin.md
+          - "第 1 回　量子化学のための数学：行列、固有値問題、変分法": courses/qc-theory/01-mathematics.md
+          - "第 2 回　多電子の波動関数：Born–Oppenheimer 近似と Slater 決定子": courses/qc-theory/02-many-electron-wavefunctions.md
+          - "第 3 回　演算子と行列要素：Slater–Condon 則と第二量子化": courses/qc-theory/03-second-quantization.md
+          - "第 4 回　スピン：Ŝ²、制限・非制限の決定子、CSF": courses/qc-theory/04-spin.md
+          - "第 5 回　Hartree–Fock 法：RHF、UHF、ROHF": courses/qc-theory/05-hartree-fock.md
           - "第 6 回　基底関数": courses/qc-theory/06-basis-sets.md
           - "第 7 回　電子相関とは：動的相関と静的相関": courses/qc-theory/07-electron-correlation.md
           - "第 8 回　配置間相互作用（CI）": courses/qc-theory/08-configuration-interaction.md
@@ -140,5 +140,6 @@ nav:
           - "第 4 回　結果をグラフにする：Matplotlib": courses/tools/04-matplotlib.md
           - "第 5 回　Git と GitHub：変更の記録と共有": courses/tools/05-git-github.md
           - "第 6 回　Markdown と数式の書き方": courses/tools/06-markdown-math.md
+  - 研究分野: fields/index.md
   - 用語集: glossary.md
   - このサイトについて: about.md

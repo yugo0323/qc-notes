@@ -53,7 +53,7 @@ def main():
             m = re.search(r"^# (.+)$", f.read_text(encoding="utf-8"), re.M)
             title = m.group(1).strip() if m else f.stem
             lines.append(f"          - {q(title)}: courses/{slug}/{f.name}")
-    lines += ["  - 用語集: glossary.md", "  - このサイトについて: about.md", ""]
+    lines += ["  - 研究分野: fields/index.md", "  - 用語集: glossary.md", "  - このサイトについて: about.md", ""]
 
     cfg = ROOT / "mkdocs.yml"
     text = cfg.read_text(encoding="utf-8")

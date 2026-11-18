@@ -14,7 +14,7 @@
     | 7 | Kohn–Sham 軌道のエネルギーの意味 |
     | 8 | 計算例：H₂O を HF、LDA、PBE で解く |
 
-    **前に読んでおく回**：量子化学の理論 [第 3 回](03-hartree-fock.md)、[第 7 回](07-electron-correlation.md)
+    **前に読んでおく回**：量子化学の理論 [第 5 回](05-hartree-fock.md)、[第 7 回](07-electron-correlation.md)
 
 !!! tip "物理的なイメージ"
     Kohn–Sham 法が求めているのは、本物の電子と同じ密度をもつ、相互作用のない架空の電子の系です。Hohenberg–Kohn の定理によれば、基底状態の密度が分かればエネルギーが決まります。そこで、運動エネルギーの大部分は架空の電子の軌道で正確に計算し、電子どうしの古典的なクーロン反発も正確に計算します。残りの量子力学的な部分（交換相関エネルギー）だけを近似します。見た目は HF 法と同じ SCF の計算ですが、平均の場の中に交換相関ポテンシャルが入ります。
@@ -38,7 +38,7 @@ $$
 例を二つ挙げます。
 
 - **水素原子の基底状態**：$\Psi = \phi_\mathrm{1s}(\mathbf r) = e^{-r}/\sqrt\pi$ なので、$\rho(\mathbf r) = e^{-2r}/\pi$ です。
-- **決定子 1 個**：軌道 $\phi_i$ に電子が入った決定子では、$\rho(\mathbf r) = \sum_i |\phi_i(\mathbf r)|^2$（和はスピン軌道について、空間部分だけを書いた）です。閉殻なら $\rho = 2\sum_i^{N/2} |\phi_i|^2$ で、第 3 回の 4.3 節の式と同じです。
+- **決定子 1 個**：軌道 $\phi_i$ に電子が入った決定子では、$\rho(\mathbf r) = \sum_i |\phi_i(\mathbf r)|^2$（和はスピン軌道について、空間部分だけを書いた）です。閉殻なら $\rho = 2\sum_i^{N/2} |\phi_i|^2$ で、第 5 回の 4.4 節の式と同じです。
 
 ![波動関数と電子密度](img/15-density.png)
 
@@ -46,7 +46,7 @@ $$
 
 ### 1.2 分子ごとに違うのは外部ポテンシャルだけ
 
-電子のハミルトニアン（第 1 回）を、次のように分けて書きます。
+電子のハミルトニアン（第 2 回）を、次のように分けて書きます。
 
 $$
 \hat H = \hat T + \hat V_\mathrm{ee} + \sum_{i=1}^{N} v(\mathbf r_i),
@@ -100,7 +100,7 @@ $$
 
 ここで $\Psi[\rho]$ は、密度 $\rho$ を基底状態の密度にもつ外部ポテンシャルの、基底状態の波動関数です。第 1 定理により、これは $\rho$ から一つに決まります。
 
-第 2 定理は、$\Psi[\rho]$ に変分原理（第 3 回）を当てはめると出てきます。別の密度 $\tilde\rho$ をとり、$\tilde\Psi = \Psi[\tilde\rho]$ とします。$\tilde\Psi$ の密度は $\tilde\rho$ なので、1.2 節の式から $\int v\tilde\rho\,d\mathbf r = \langle\tilde\Psi|\sum_i v(\mathbf r_i)|\tilde\Psi\rangle$ です。これを使うと
+第 2 定理は、$\Psi[\rho]$ に変分原理（第 1 回）を当てはめると出てきます。別の密度 $\tilde\rho$ をとり、$\tilde\Psi = \Psi[\tilde\rho]$ とします。$\tilde\Psi$ の密度は $\tilde\rho$ なので、1.2 節の式から $\int v\tilde\rho\,d\mathbf r = \langle\tilde\Psi|\sum_i v(\mathbf r_i)|\tilde\Psi\rangle$ です。これを使うと
 
 $$
 E_v[\tilde\rho] = \langle\tilde\Psi|\hat T + \hat V_\mathrm{ee}|\tilde\Psi\rangle + \langle\tilde\Psi|\textstyle\sum_i v(\mathbf r_i)|\tilde\Psi\rangle = \langle\tilde\Psi|\hat H|\tilde\Psi\rangle \ge E_0
@@ -208,7 +208,7 @@ $$
 E[\rho] = \sum_{i}^{N}\Big\langle\phi_i\Big|-\tfrac12\nabla^2\Big|\phi_i\Big\rangle + \int v\rho\,d\mathbf r + J[\rho] + E_\mathrm{xc}[\rho]
 $$
 
-これを、軌道が規格直交であるという条件のもとで最小にします。手順は Hartree–Fock 方程式の導出（第 3 回の付録 C）と同じです。導出は付録 B に回しますが、結果は次の方程式です。
+これを、軌道が規格直交であるという条件のもとで最小にします。手順は Hartree–Fock 方程式の導出（第 5 回の付録 B）と同じです。導出は付録 B に回しますが、結果は次の方程式です。
 
 $$
 \Big[-\tfrac12\nabla^2 + v_s(\mathbf r)\Big]\phi_i(\mathbf r) = \varepsilon_i\,\phi_i(\mathbf r),
@@ -252,15 +252,15 @@ $$
 
 ### 5.3 Hartree–Fock 方程式との違い
 
-Hartree–Fock 方程式と比べると、違いは 1 か所だけです。Fock 演算子の交換演算子 $-\hat K$ の代わりに、$v_\mathrm{xc}(\mathbf r)$ が入っています。$\hat K$ は、軌道にかけると別の点の値を積分で集めてくる非局所的な演算子でした（第 3 回）。一方、$v_\mathrm{xc}$ は各点で値を持つ普通のポテンシャルです。$v_s$ も $\rho$ に依存するので、Kohn–Sham 方程式も SCF の繰り返しで解きます（図 5）。
+Hartree–Fock 方程式と比べると、違いは 1 か所だけです。Fock 演算子の交換演算子 $-\hat K$ の代わりに、$v_\mathrm{xc}(\mathbf r)$ が入っています。$\hat K$ は、軌道にかけると別の点の値を積分で集めてくる非局所的な演算子でした（第 5 回）。一方、$v_\mathrm{xc}$ は各点で値を持つ普通のポテンシャルです。$v_s$ も $\rho$ に依存するので、Kohn–Sham 方程式も SCF の繰り返しで解きます（図 5）。
 
 ![Kohn–Sham の SCF の流れ](img/15-scf.png)
 
-**図 5**　Kohn–Sham の SCF の流れ。密度を仮定して $v_s$ を作り、Kohn–Sham 方程式を解いて新しい密度を求めます。密度が変わらなくなるまで繰り返します。HF の SCF（第 3 回の 5 節）との違いは、橙の箱で交換の項の代わりに $v_\mathrm{xc}$ を作ることだけです。
+**図 5**　Kohn–Sham の SCF の流れ。密度を仮定して $v_s$ を作り、Kohn–Sham 方程式を解いて新しい密度を求めます。密度が変わらなくなるまで繰り返します。HF の SCF（第 5 回の 5 節）との違いは、橙の箱で交換の項の代わりに $v_\mathrm{xc}$ を作ることだけです。
 
 ### 5.4 行列で書く：H₂ の 2 × 2 の例
 
-基底関数で展開すると、Roothaan–Hall 方程式と同じ形 $\mathbf F\mathbf C = \mathbf S\mathbf C\boldsymbol\varepsilon$ になります。閉殻の場合、二つの方法の行列は次のとおりです（$\mathbf D$ は第 3 回の 4.3 節の密度行列）。
+基底関数で展開すると、Roothaan–Hall 方程式と同じ形 $\mathbf F\mathbf C = \mathbf S\mathbf C\boldsymbol\varepsilon$ になります。閉殻の場合、二つの方法の行列は次のとおりです（$\mathbf D$ は第 5 回の 4.4 節の密度行列）。
 
 $$
 F^\mathrm{HF}_{\mu\nu} = h_{\mu\nu} + \underbrace{\sum_{\lambda\sigma} D_{\lambda\sigma}(\mu\nu|\lambda\sigma)}_{J_{\mu\nu}} \; \underbrace{- \frac12\sum_{\lambda\sigma} D_{\lambda\sigma}(\mu\lambda|\nu\sigma)}_{-\frac12 K_{\mu\nu}},
@@ -270,7 +270,7 @@ $$
 
 $V^\mathrm{xc}_{\mu\nu} = \int g_\mu(\mathbf r)\,v_\mathrm{xc}(\mathbf r)\,g_\nu(\mathbf r)\,d\mathbf r$ は、基底関数 $g_\mu$ で $v_\mathrm{xc}$ をはさんだ積分です。$v_\mathrm{xc}$ は一般に複雑な関数なので、この積分は空間に点を並べた格子（グリッド）の上で数値的に計算します。
 
-第 3 回の 4.2 節と同じ H₂（STO-3G、H–H 0.74 Å、基底関数は各 H の 1s の $g_A$、$g_B$）で書き出します。対称性から $F_{AA} = F_{BB}$ なので、
+第 5 回の 4.3 節と同じ H₂（STO-3G、H–H 0.74 Å、基底関数は各 H の 1s の $g_A$、$g_B$）で書き出します。対称性から $F_{AA} = F_{BB}$ なので、
 
 $$
 \mathbf F^\mathrm{HF} =
@@ -286,9 +286,9 @@ h_{AB} + J_{AB} + V^\mathrm{xc}_{AB} & h_{AA} + J_{AA} + V^\mathrm{xc}_{AA}
 \end{pmatrix}
 $$
 
-です。二つの行列を要素ごとに比べると、$h_{\mu\nu}$ と $J_{\mu\nu}$ の形は同じで、違うのは $-\frac12 K_{\mu\nu}$ と $V^\mathrm{xc}_{\mu\nu}$ の 1 か所だけです。$-\frac12 K$ は、同じスピンの電子が避け合うことによる反発の減り方を、軌道を使って正確に計算した項でした（第 3 回）。$V^\mathrm{xc}$ は、交換と相関をまとめて、各点の密度（とその勾配）から近似した項です。
+です。二つの行列を要素ごとに比べると、$h_{\mu\nu}$ と $J_{\mu\nu}$ の形は同じで、違うのは $-\frac12 K_{\mu\nu}$ と $V^\mathrm{xc}_{\mu\nu}$ の 1 か所だけです。$-\frac12 K$ は、同じスピンの電子が避け合うことによる反発の減り方を、軌道を使って正確に計算した項でした（第 5 回）。$V^\mathrm{xc}$ は、交換と相関をまとめて、各点の密度（とその勾配）から近似した項です。
 
-この行列の固有値の求め方も、第 3 回と同じです。対称性から $\sigma_g \propto g_A + g_B$ なので、
+この行列の固有値の求め方も、第 5 回と同じです。対称性から $\sigma_g \propto g_A + g_B$ なので、
 
 $$
 \varepsilon_{\sigma_g} = \frac{F_{AA} + F_{AB}}{1 + S}, \qquad \varepsilon_{\sigma_u} = \frac{F_{AA} - F_{AB}}{1 - S}
@@ -403,7 +403,7 @@ $I = E(N-1) - E(N)$ はイオン化エネルギーです。直感的な理由は
 
 ### 8.1 軌道エネルギーと ΔSCF
 
-第 3 回と同じ構造の H₂O を、PySCF [Sun 2020] で 3 つの方法で解きます。
+第 5 回と同じ構造の H₂O を、PySCF [Sun 2020] で 3 つの方法で解きます。
 
 - **HF**：Hartree–Fock 法。
 - **SVWN**：LDA。交換は 6.3 節の式、相関は VWN [Vosko 1980] です。
@@ -447,7 +447,7 @@ PBE      -76.380089       7.25     12.80
 
 PySCF で `xc="SVWN"` と書くと、Slater の交換と VWN の相関を組み合わせた LDA になります。`xc="LDA"` と書くと交換だけになるので、注意してください。DFT の計算は、HF の計算の Fock 行列の作り方を変えるだけです。実際、上のコードの違いは `scf.RHF` と `dft.RKS` の 1 か所だけです。
 
-実験のイオン化エネルギーは 12.621 eV です（第 3 回と同じ NIST の評価値。関連リンク）。HF と PBE の軌道エネルギーを、準位図で比べます（上と同じ中性の H₂O の計算の `mo_energy` を描いたもの）。
+実験のイオン化エネルギーは 12.621 eV です（第 5 回と同じ NIST の評価値。関連リンク）。HF と PBE の軌道エネルギーを、準位図で比べます（上と同じ中性の H₂O の計算の `mo_energy` を描いたもの）。
 
 ![H2O の軌道エネルギー](img/15-levels.png)
 
@@ -455,7 +455,7 @@ PySCF で `xc="SVWN"` と書くと、Slater の交換と VWN の相関を組み�
 
 表と図 6 から、次のことが分かります。
 
-1. HF の $-\varepsilon_\mathrm{HOMO}$（13.89 eV）は、第 3 回の Koopmans の定理のとおり、実験値に近い値です。
+1. HF の $-\varepsilon_\mathrm{HOMO}$（13.89 eV）は、第 5 回の Koopmans の定理のとおり、実験値に近い値です。
 2. LDA と PBE の $-\varepsilon_\mathrm{HOMO}$ は 7〜7.5 eV で、実験値の 6 割ほどしかありません。HOMO のエネルギーが高すぎます。
 3. 一方、LDA と PBE の ΔSCF は 13.18 eV と 12.80 eV で、実験値に近い値です。HF の ΔSCF（10.99 eV）よりも近くなっています。
 
@@ -589,7 +589,7 @@ $$
 \delta\mathcal L = \sum_i\Big\langle\delta\phi_i\Big|\Big[-\tfrac12\nabla^2 + v_s\Big]\phi_i - \sum_j\lambda_{ji}\phi_j\Big\rangle + \text{(複素共役)}
 $$
 
-です。任意の $\delta\phi_i$ で $\delta\mathcal L = 0$ となるには、括弧の中の関数が 0 でなければならず、$[-\frac12\nabla^2 + v_s]\phi_i = \sum_j\lambda_{ji}\phi_j$ が得られます。第 3 回の付録 C と同じく、軌道をユニタリー変換して $\boldsymbol\lambda$ を対角にしても密度は変わらないので、対角になる軌道を選ぶと、本文の Kohn–Sham 方程式になります（$\varepsilon_i = \lambda_{ii}$）。
+です。任意の $\delta\phi_i$ で $\delta\mathcal L = 0$ となるには、括弧の中の関数が 0 でなければならず、$[-\frac12\nabla^2 + v_s]\phi_i = \sum_j\lambda_{ji}\phi_j$ が得られます。第 5 回の付録 B と同じく、軌道をユニタリー変換して $\boldsymbol\lambda$ を対角にしても密度は変わらないので、対角になる軌道を選ぶと、本文の Kohn–Sham 方程式になります（$\varepsilon_i = \lambda_{ii}$）。
 
 ## 付録 C　Janak の定理の導出
 
