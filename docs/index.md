@@ -20,8 +20,8 @@ hide:
 <!-- PICKUP:START -->
 <div class="qc-pickup">
 <span class="qc-chip qc-chip--paper">論文紹介</span>
-<p class="qc-pickup__title"><a href="papers/2026/2026-11-17/">スピン純粋な MRSF-TDDFT：非共線形カーネルとの統合</a></p>
-<p class="qc-pickup__meta">2026.11.17　ChemRxiv（プレプリント、査読前）</p>
+<p class="qc-pickup__title"><a href="papers/2026/2026-11-18/">F12 法で強相関を単一参照のまま扱う CCSD0-F12Pi</a></p>
+<p class="qc-pickup__meta">2026.11.18　arXiv（プレプリント、査読前）</p>
 </div>
 <!-- PICKUP:END -->
 
@@ -29,6 +29,7 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-18/">F12 法で強相関を単一参照のまま扱う CCSD0-F12Pi</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-17/">スピン純粋な MRSF-TDDFT：非共線形カーネルとの統合</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 1〜11 回を公開しました（Born–Oppenheimer 近似から DLPNO-CCSD(T) まで）</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/tm-complexes/">遷移金属錯体の計算 第 1〜5 回を公開しました（配位子場からスピン状態のエネルギー差まで）</a></li>
@@ -36,7 +37,6 @@ hide:
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/ml-basics/">機械学習の基礎 第 1〜10 回（全回）を公開しました</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/ml-chem/">量子化学のための機械学習 第 1〜5 回を公開しました</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/tools/">研究の道具 第 1〜6 回（全回）を公開しました</a></li>
-<li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--info">お知らせ</span><a href="about/">サイト名を QCLab にしました</a></li>
 </ul>
 <!-- NEWS:END -->
 <p class="qc-more"><a href="papers/">論文紹介の一覧 →</a></p>
