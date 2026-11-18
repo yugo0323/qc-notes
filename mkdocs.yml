@@ -6,6 +6,7 @@ repo_name: yugo0323/qc-notes
 
 theme:
   name: material
+  custom_dir: overrides
   language: ja
   font: false
   features:
@@ -13,6 +14,7 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.footer
     - search.highlight
     - content.code.copy
   palette:

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{#- 講義ノートの各回の冒頭に、同じ連載の前後の回と目次へのリンクを置く -#}
+{% block content %}
+  {% if page.url.startswith("courses/") and page.parent and page.file.name != "index" %}
+    {% set siblings = page.parent.children %}
+    {% set prev = page.previous_page if page.previous_page and page.previous_page.parent == page.parent and page.previous_page.file.name != "index" else none %}
+    {% set nxt = page.next_page if page.next_page and page.next_page.parent == page.parent else none %}
+    {% set toc = siblings[0] if siblings and siblings[0].is_page and siblings[0].file.name == "index" else none %}
+    <nav class="qc-lecnav" aria-label="前後の回">
+      <span class="qc-lecnav__prev">
+        {% if prev %}<a href="{{ prev.url | url }}" title="{{ prev.title | striptags }}">← {{ (prev.title | striptags).split("回")[0] ~ "回" }}</a>{% endif %}
+      </span>
+      <span class="qc-lecnav__toc">
+        {% if toc %}<a href="{{ toc.url | url }}">{{ page.parent.title }} の目次</a>{% endif %}
+      </span>
+      <span class="qc-lecnav__next">
+        {% if nxt %}<a href="{{ nxt.url | url }}" title="{{ nxt.title | striptags }}">{{ (nxt.title | striptags).split("回")[0] ~ "回" }} →</a>{% endif %}
+      </span>
+    </nav>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
