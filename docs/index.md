@@ -30,13 +30,13 @@ hide:
 <!-- NEWS:START -->
 <ul class="qc-news">
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-18/">F12 法で強相関を単一参照のまま扱う CCSD0-F12Pi</a></li>
+<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 19〜22 回を公開しました（TDDFT、スピン反転、MRSF-TDDFT、円錐交差。全 22 回がそろいました）</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 12〜18 回を公開しました（CASSCF から DFT の誤差まで）</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/tm-complexes/">遷移金属錯体の計算 第 6〜10 回を公開しました（ベンチマークから多参照の計算まで）</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/ml-chem/">量子化学のための機械学習 第 6〜10 回を公開しました（データセットから使うときの注意まで）</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-17/">スピン純粋な MRSF-TDDFT：非共線形カーネルとの統合</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 1〜11 回を公開しました（Born–Oppenheimer 近似から DLPNO-CCSD(T) まで）</a></li>
 <li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/tm-complexes/">遷移金属錯体の計算 第 1〜5 回を公開しました（配位子場からスピン状態のエネルギー差まで）</a></li>
-<li><span class="qc-news__date">2026.11.17</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/packages/">計算パッケージの使い方 第 1〜10 回を公開しました（Gaussian、ORCA、GAMESS）</a></li>
 </ul>
 <!-- NEWS:END -->
 <p class="qc-more"><a href="papers/">論文紹介の一覧 →</a></p>
