@@ -44,9 +44,15 @@ $$
 \Psi_n = \sum_{ia} X_{ia}^{n}\, \Phi_i^a
 $$
 
-$\Phi_i^a$ は、占有軌道 $i$ の電子 1 個を仮想軌道 $a$ に移した配置です。
+$\Phi_i^a$ は、占有軌道 $i$ の電子 1 個を仮想軌道 $a$ に移した配置、$X_{ia}^n$ はその係数です。
 
-閉殻の分子では、配置をスピンについてそろえると、一重項と三重項の問題に分かれます（第 5 回）。行列の要素は次のとおりです。導出は付録 A に回します。
+閉殻の分子では、配置をスピンについてそろえると、一重項と三重項の問題に分かれます（第 5 回）。図 1 のように、$i$ の α 電子を $a$ に移した決定子と、β 電子を移した決定子を、足すと一重項、引くと三重項（$M_S = 0$ の成分）の配置になります。
+
+![エネルギー準位図と、一重項・三重項の励起の配置](img/19-levels.png)
+
+**図 1**　(a) 閉殻の基底状態。横線が軌道のエネルギー、青の上向きの矢印が α 電子、橙の下向きの矢印が β 電子です。(b) 占有軌道 $i$ から仮想軌道 $a$ へ電子を 1 個移した 2 つの決定子の和が、一重項の配置です。(c) 差が三重項の $M_S = 0$ の成分です。
+
+行列の要素は次のとおりです。すべての段階を付録 A で導きます。
 
 $$
 A_{ia,jb}^{\mathrm S} = \delta_{ij}\delta_{ab}(\varepsilon_a - \varepsilon_i) + 2(ia|jb) - (ij|ab)
@@ -62,7 +68,20 @@ $$
 \mathbf A \mathbf X^n = \omega_n \mathbf X^n
 $$
 
-の固有値として求まります。
+の固有値として求まります。行列の行と列は、励起 $i \to a$ の組で番号づけられています。
+
+具体的な形を見るため、占有軌道が HOMO の $h$ だけ、仮想軌道が LUMO の $l$ とその次の $m$ の 2 個だけの場合を書き出します。励起は $h \to l$ と $h \to m$ の 2 つなので、一重項の行列は 2 行 2 列です。
+
+$$
+\mathbf A^{\mathrm S} =
+\begin{pmatrix}
+\varepsilon_l - \varepsilon_h + 2(hl|hl) - (hh|ll) & 2(hl|hm) - (hh|lm) \\
+2(hm|hl) - (hh|ml) & \varepsilon_m - \varepsilon_h + 2(hm|hm) - (hh|mm)
+\end{pmatrix}
+\begin{matrix} \leftarrow h \to l \\ \leftarrow h \to m \end{matrix}
+$$
+
+対角の要素は、それぞれの励起だけを考えたときのエネルギーです。非対角の要素は、2 つの励起を混ぜる結合です。結合が 0 なら、励起エネルギーは対角の要素そのものになります。結合があると、2 つの励起が混ざり、固有値は対角の要素から押し離されます（第 22 回の 2 状態の模型と同じしくみです）。
 
 ### 2.2 各項の意味
 
@@ -86,7 +105,7 @@ HF の波動関数の時間変化をこの考え方で扱うのが、**時間に
 
 ### 3.2 行列の形
 
-導出は省きますが、TDHF の励起エネルギーは、次の固有値問題で求まります [Dreuw 2005]。
+TDHF の励起エネルギーは、次の固有値問題で求まります [Dreuw 2005]。この式は、HF の密度行列の時間変化を表す運動方程式に小さな振動を入れて導けます。すべての段階を付録 B に書きます。
 
 $$
 \begin{pmatrix} \mathbf A & \mathbf B \\ \mathbf B & \mathbf A \end{pmatrix}
@@ -104,6 +123,34 @@ B_{ia,jb}^{\mathrm T} = -(ib|ja)
 $$
 
 $\mathbf X$ は占有から仮想への励起の振幅、$\mathbf Y$ は仮想から占有への「脱励起」の振幅です。$\mathbf Y$ は、基底状態が HF の決定子からずれている分（基底状態の相関の一部）を表すと考えられます。$\mathbf B = \mathbf 0$ とおけば $\mathbf Y = \mathbf 0$ となり、CIS に戻ります。
+
+この式が何をしているかを、励起が 1 つ（$h \to l$ だけ）の場合で確かめます。$\mathbf A$、$\mathbf B$ はただの数 $A$、$B$ になり、問題は 2 行 2 列です。
+
+$$
+\begin{pmatrix} A & B \\ B & A \end{pmatrix}
+\begin{pmatrix} X \\ Y \end{pmatrix}
+= \omega \begin{pmatrix} X \\ -Y \end{pmatrix}
+$$
+
+1 行目と 2 行目を書き出すと、
+
+$$
+A X + B Y = \omega X, \qquad B X + A Y = -\omega Y
+$$
+
+です。2 本の式を足すと $(A + B)(X + Y) = \omega (X - Y)$、引くと $(A - B)(X - Y) = \omega (X + Y)$ になります。2 本目の式の両辺に $(A + B)$ をかけ、1 本目の式を使って $(A + B)(X + Y)$ を $\omega(X - Y)$ に置き換えると、
+
+$$
+(A + B)(A - B)(X - Y) = \omega (A + B)(X + Y) = \omega^2 (X - Y)
+$$
+
+なので、
+
+$$
+\omega^2 = (A + B)(A - B) = A^2 - B^2, \qquad \omega = \sqrt{A^2 - B^2}
+$$
+
+です。CIS の励起エネルギーは $A$ でした。$B \neq 0$ なら $\omega < A$ なので、この模型では、TDHF の励起エネルギーは CIS より低くなります。また、$A + B$ が 0 に近づくと $\omega$ も 0 に近づき、$A + B < 0$ では $\omega^2 < 0$ です。この 2 つの点が、3.3 節と 3.4 節の話の要になります。
 
 軌道が実数のとき、この問題は次の形に書き直せます。
 
@@ -159,6 +206,10 @@ $\mathbf A + \mathbf B$ は、軌道を実数の範囲で少し回したとき�
     $\omega_n$ は励起エネルギー、$f_n$ は振動子強度（その振動がどれだけ強く光と結びつくか）です。外から揺すったばねの振れ幅が $1/(\omega_0^2 - \omega^2)$ に比例し、固有振動数で発散するのと同じ形です。3.1 節の「応答が発散する振動数を探す」とは、この共鳴を探すことです。
 - **三重項不安定性**：3.3 節の状況は、ばねが柔らかくなり、ばね定数が 0 に近づいた状態です。振動数も 0 に近づきます。ばね定数が負になると振動数は虚数になり、つり合いの位置が実は不安定だったことを意味します。分子の振動解析で、遷移状態に虚数の振動数が現れるのと同じです。
 - **CIS（TDA）**：$\mathbf B = 0$ とおくと、ばね定数と質量の逆数がどちらも $\mathbf A$ になり、$\omega$ は $\mathbf A$ の固有値そのものになります。振動として扱わずに、励起した配置のエネルギーを直接求めることにあたります。
+
+![ばねの絵と、H2O の分極率](img/19-spring.png)
+
+**図 2**　左：密度のゆがみ $q$ に対するエネルギーの増え方。曲率（ばね定数 $\mathbf A + \mathbf B$）が大きいほど振動数が高く、曲率が小さいほど低くなります。曲率が負（赤の破線）だと、つり合いの位置は不安定です。右：H₂O の分極率 $\alpha(\omega)$ を、TD-PBE0/aug-cc-pVDZ で求めた最も低い 20 個の励起状態の和で計算したもの（上の式）。点線の位置（振動子強度が 0.01 を超える励起エネルギー）で発散し、符号が変わります。振動子強度がほぼ 0 の状態（暗い状態）では、発散は見えません。
 
 このたとえには限界もあります。ここで扱ったのは、小さな揺れ（線形応答）だけです。調和振動子の基本振動数だけを求め、倍音を求めないのに似ていて、6.2 節で見る二電子励起は、このままでは現れません。
 
@@ -291,6 +342,10 @@ EOM-CCSD          4.01    3.55    5.99
 3. **三重項の ππ\***：TDHF は 2.02 eV で、EOM-CCSD（5.99 eV）より 4 eV も低くなりました。このため TDHF では、三重項の中で ππ\* が nπ\* より下に来て、状態の順番が入れ替わっています。同じ RHF の解で、PySCF の安定性解析（RHF から UHF への安定性）を行うと、最も小さな固有値は正でしたが 0.017 と、0 にかなり近い値でした。3.3 節で見た、三重項不安定性に近いために三重項の励起エネルギーが下がりすぎる状況です。
 4. **TDDFT の三重項 ππ\***：厳密な交換を含む PBE0 と CAM-B3LYP では、完全な TDDFT の値（5.21、5.30 eV）が TDA の値（5.71、5.76 eV）より 0.5 eV ほど低く、TDA のほうが EOM-CCSD に近くなりました。
 
+![ホルムアルデヒドの励起エネルギーの比較](img/19-h2co.png)
+
+**図 3**　上の表をグラフにしたもの。赤の破線が基準の EOM-CCSD です。右の三重項 ππ\* で、TDHF（灰）が大きく下がり、厳密な交換を含む汎関数（PBE0、CAM-B3LYP）では完全な TDDFT（橙）が TDA（青）より低くなっています。
+
 3 と 4 は、文献で報告されている傾向と一致します。Peach らは、厳密な交換を含む TDDFT の三重項の励起エネルギーが大きく下がりすぎることがあり、それが基底状態の三重項不安定性で理解できることを示しました。さらに、TDA を使うと、問題のある三重項の励起エネルギーが大きく改善することを報告しています [Peach 2011]。
 
 ただし、この比較は 1 個の分子の、少数の状態についてのものです。汎関数の良し悪しを、この表から一般的に結論することはできません。
@@ -307,7 +362,11 @@ $$
 \omega_\mathrm{CT} \approx \mathrm{IP}_\mathrm D - \mathrm{EA}_\mathrm A - \frac1R
 $$
 
-$\mathrm{IP}_\mathrm D$ は D のイオン化エネルギー、$\mathrm{EA}_\mathrm A$ は A の電子親和力、$R$ は D と A の距離です。最後の項は、離れた正と負の電荷の間のクーロン引力です。
+$\mathrm{IP}_\mathrm D$ は D のイオン化エネルギー、$\mathrm{EA}_\mathrm A$ は A の電子親和力、$R$ は D と A の距離です。最後の項は、離れた正と負の電荷の間のクーロン引力です。電子を D から取り去るのに $\mathrm{IP}_\mathrm D$ が要り、A に付けると $\mathrm{EA}_\mathrm A$ だけ戻り、できた D⁺ と A⁻ が引き合う分 $1/R$ だけ下がる、と考えれば分かります。
+
+![電荷移動励起の模式図](img/19-ct.png)
+
+**図 4**　左：電荷移動励起では、D の軌道 $\phi_i$ から、離れた A の軌道 $\phi_a$ へ電子が移ります。2 つの軌道はほとんど重なりません。右：励起エネルギーの距離への依存の模式図。正しくは $-1/R$ のために距離とともに増えますが（青）、半局所汎関数の TDDFT では一定になります（橙）。
 
 4.3 節の行列で、この励起を考えます。占有軌道 $i$ が D に、仮想軌道 $a$ が A にあるとします。二つの軌道はほとんど重ならないので、積 $\phi_i\phi_a$ を含む $(ia|jb)$ とカーネルの項はほぼ 0 です。残るのは、
 
@@ -345,19 +404,27 @@ $$
 
 ## 付録 A　CIS の行列要素の導出
 
-閉殻の HF の決定子 $\Phi_0$ から、空間軌道 $i$ の α 電子を空間軌道 $a$ の α スピン軌道に移した決定子を $\Phi_{i\alpha}^{a\alpha}$、β 電子について同じものを $\Phi_{i\beta}^{a\beta}$ と書きます。Slater–Condon の規則（第 8 回）から、同じスピンどうしの要素は
+閉殻の HF の決定子 $\Phi_0$ から、空間軌道 $i$ の α 電子を空間軌道 $a$ の α スピン軌道に移した決定子を $\Phi_{i\alpha}^{a\alpha}$、β 電子について同じものを $\Phi_{i\beta}^{a\beta}$ と書きます。1 電子励起の決定子どうしの行列要素は、Slater–Condon の規則（第 8 回）から、スピン軌道で書くと
+
+$$
+\langle \Phi_{i}^{a} | \hat H - E_0 | \Phi_{j}^{b} \rangle = \delta_{ij}\delta_{ab}(\varepsilon_a - \varepsilon_i) + \langle aj | ib \rangle - \langle aj | bi \rangle
+$$
+
+です。$E_0$ は HF のエネルギー、$\langle pq | rs \rangle$ は物理学者の表記の 2 電子積分で、化学者の表記とは $\langle pq | rs \rangle = (pr|qs)$ の関係があります。右辺の第 2 項 $\langle aj | ib \rangle = (ai|jb)$ は、電子 1 の座標で $a$ と $i$ を、電子 2 の座標で $j$ と $b$ を積分するので、$a$ と $i$ のスピンが同じで、かつ $j$ と $b$ のスピンが同じときだけ 0 になりません。第 3 項 $\langle aj | bi \rangle = (ab|ji)$ は、$a$ と $b$、$j$ と $i$ のスピンが同じときだけ 0 になりません。
+
+空間軌道で書き直します。同じスピンどうし（α から α へ移した決定子どうし）では、両方の項が残り、
 
 $$
 \langle \Phi_{i\alpha}^{a\alpha} | \hat H - E_0 | \Phi_{j\alpha}^{b\alpha} \rangle = \delta_{ij}\delta_{ab}(\varepsilon_a - \varepsilon_i) + (ia|jb) - (ij|ab)
 $$
 
-です。$E_0$ は HF のエネルギーです。違うスピンどうしでは、交換の項が消えて、
+です（軌道は実数なので $(ai|jb) = (ia|jb)$、$(ab|ji) = (ij|ab)$）。違うスピンどうし（α から α へ移した決定子と、β から β へ移した決定子）では、$i = j$、$a = b$ のときでも、2 つの決定子は 2 つのスピン軌道で違います。そのため、軌道エネルギーの差の項は現れません。さらに、$a$ が α、$b$ が β なので第 3 項も 0 になり、
 
 $$
 \langle \Phi_{i\alpha}^{a\alpha} | \hat H | \Phi_{j\beta}^{b\beta} \rangle = (ia|jb)
 $$
 
-になります。一重項の配置は $(\Phi_{i\alpha}^{a\alpha} + \Phi_{i\beta}^{a\beta})/\sqrt2$、三重項（$M_S = 0$ の成分）の配置は $(\Phi_{i\alpha}^{a\alpha} - \Phi_{i\beta}^{a\beta})/\sqrt2$ です（第 5 回）。これらで行列要素をとると、
+になります。一重項の配置は $(\Phi_{i\alpha}^{a\alpha} + \Phi_{i\beta}^{a\beta})/\sqrt2$、三重項（$M_S = 0$ の成分）の配置は $(\Phi_{i\alpha}^{a\alpha} - \Phi_{i\beta}^{a\beta})/\sqrt2$ です（第 5 回）。これらで行列要素をとると、同じスピンどうしの要素 2 個と違うスピンどうしの要素 2 個が、係数 $\frac12$ で足し合わされます（三重項では、違うスピンどうしの要素に $-1$ がかかります）。整理すると、
 
 $$
 A^{\mathrm S} = \big[\delta_{ij}\delta_{ab}(\varepsilon_a - \varepsilon_i) + (ia|jb) - (ij|ab)\big] + (ia|jb)
@@ -368,6 +435,61 @@ A^{\mathrm T} = \big[\delta_{ij}\delta_{ab}(\varepsilon_a - \varepsilon_i) + (ia
 $$
 
 となり、本文の式が得られます。
+
+## 付録 B　TDHF の式の導出
+
+**出発点**：HF 法では、各スピン軌道 $\phi_k$ が Fock 演算子 $\hat F$ の中を動きます。時間に依存する場合は $i\, \partial_t \phi_k = \hat F \phi_k$ です。1 電子の密度行列 $\hat P = \sum_{k \in \text{占有}} |\phi_k\rangle\langle\phi_k|$ を時間で微分し、この式とその共役 $-i\, \partial_t \langle\phi_k| = \langle\phi_k| \hat F$ を使うと、
+
+$$
+i\, \partial_t \hat P = \sum_k \big( \hat F |\phi_k\rangle\langle\phi_k| - |\phi_k\rangle\langle\phi_k| \hat F \big) = \hat F \hat P - \hat P \hat F = [\hat F, \hat P]
+$$
+
+が得られます。以下、基底状態の HF の軌道（スピン軌道）で行列として書きます。基底状態では $P^{(0)}$ は占有軌道で 1、仮想軌道で 0 の対角行列、$F^{(0)}$ は軌道エネルギー $\varepsilon_p$ の対角行列です。
+
+**小さなずれを入れる**：$P = P^{(0)} + \delta P$ とします。$P$ は射影なので $P^2 = P$ を満たします。$\delta P$ について 1 次の項を比べると $P^{(0)} \delta P + \delta P P^{(0)} = \delta P$ です。成分で書くと、占有–占有の成分では $2\,\delta P_{ij} = \delta P_{ij}$ なので $\delta P_{ij} = 0$、仮想–仮想の成分では $0 = \delta P_{ab}$ です。つまり、ずれは占有–仮想の成分 $\delta P_{ia}$ と仮想–占有の成分 $\delta P_{ai}$ だけです。
+
+Fock 行列は密度行列に依存し、$F_{pq} = h_{pq} + \sum_{rs} \langle pr \| qs \rangle P_{sr}$ です（$\langle pr \| qs \rangle = \langle pr | qs \rangle - \langle pr | sq \rangle$）。したがって、Fock 行列のずれは
+
+$$
+\delta F_{pq} = \sum_{jb} \big( \langle pj \| qb \rangle\, \delta P_{bj} + \langle pb \| qj \rangle\, \delta P_{jb} \big)
+$$
+
+です。
+
+**運動方程式を 1 次まで展開する**：$[F, P]$ の 1 次の部分は $[F^{(0)}, \delta P] + [\delta F, P^{(0)}]$ です。仮想–占有の成分 $(a, i)$ をとると、$[F^{(0)}, \delta P]_{ai} = (\varepsilon_a - \varepsilon_i)\, \delta P_{ai}$、$[\delta F, P^{(0)}]_{ai} = \delta F_{ai} \cdot 1 - 0 \cdot \delta F_{ai} = \delta F_{ai}$ なので、
+
+$$
+i\, \partial_t \delta P_{ai} = (\varepsilon_a - \varepsilon_i)\, \delta P_{ai} + \delta F_{ai}
+$$
+
+です。占有–仮想の成分 $(i, a)$ では、同じように計算して
+
+$$
+i\, \partial_t \delta P_{ia} = -(\varepsilon_a - \varepsilon_i)\, \delta P_{ia} - \delta F_{ia}
+$$
+
+です。
+
+**固有振動を探す**：外から何も加えずに、密度が振動数 $\omega$ で振動し続ける解を探します。$\delta P$ はエルミートなので、$\delta P_{ai} = X_{ai} e^{-i\omega t} + Y_{ai}^* e^{i\omega t}$、$\delta P_{ia} = \delta P_{ai}^* = Y_{ai} e^{-i\omega t} + X_{ai}^* e^{i\omega t}$ とおけます。これを 2 本の式に入れ、$e^{-i\omega t}$ の係数どうしを比べます。左辺の $i\, \partial_t$ は $e^{-i\omega t}$ に $\omega$ をかけるので、
+
+$$
+\omega X_{ai} = (\varepsilon_a - \varepsilon_i) X_{ai} + \sum_{bj} \big( \langle aj \| ib \rangle X_{bj} + \langle ab \| ij \rangle Y_{bj} \big)
+$$
+
+$$
+\omega Y_{ai} = -(\varepsilon_a - \varepsilon_i) Y_{ai} - \sum_{bj} \big( \langle ij \| ab \rangle X_{bj} + \langle ib \| aj \rangle Y_{bj} \big)
+$$
+
+となります。軌道が実数なら、$\langle ij \| ab \rangle = \langle ab \| ij \rangle$、$\langle ib \| aj \rangle = \langle aj \| ib \rangle$ です。そこで
+
+$$
+A_{ai,bj} = \delta_{ij}\delta_{ab}(\varepsilon_a - \varepsilon_i) + \langle aj \| ib \rangle, \qquad
+B_{ai,bj} = \langle ab \| ij \rangle
+$$
+
+とおくと、2 本の式は $\mathbf A \mathbf X + \mathbf B \mathbf Y = \omega \mathbf X$ と $\mathbf B \mathbf X + \mathbf A \mathbf Y = -\omega \mathbf Y$、つまり本文 3.2 節の式になります。
+
+**スピンについてそろえる**：閉殻の分子で、付録 A と同じように α と β の成分を足し引きすると、$\mathbf A$ は付録 A の $A^{\mathrm S}$、$A^{\mathrm T}$ になります。$\mathbf B$ については、同じスピンどうしで $\langle ab \| ij \rangle = (ia|jb) - (ib|ja)$、違うスピンどうしで $(ia|jb)$ なので、一重項は和の $2(ia|jb) - (ib|ja)$、三重項は差の $-(ib|ja)$ になり、本文の $B^{\mathrm S}$、$B^{\mathrm T}$ が得られます。
 
 ## 参考文献
 
