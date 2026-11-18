@@ -77,6 +77,7 @@ nav:
           - "第 16 回　汎関数の階段：LDA、GGA、meta-GGA、混成、範囲分離": courses/qc-theory/16-functionals.md
           - "第 17 回　分散力の補正": courses/qc-theory/17-dispersion.md
           - "第 18 回　DFT の誤差：自己相互作用誤差と静的相関": courses/qc-theory/18-dft-errors.md
+          - "第 19 回　線形応答と TDDFT": courses/qc-theory/19-tddft.md
       - 遷移金属錯体の計算:
           - courses/tm-complexes/index.md
           - "第 1 回　d 軌道と配位子場理論": courses/tm-complexes/01-ligand-field.md
