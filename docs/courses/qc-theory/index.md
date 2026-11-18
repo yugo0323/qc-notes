@@ -47,5 +47,5 @@ Hartree–Fock 法から、密度汎関数理論、励起状態、多参照理�
 |---|---|---|
 | 19 | [線形応答と TDDFT](19-tddft.md) | 発展 |
 | 20 | [スピン反転 TDDFT](20-spin-flip-tddft.md) | 発展 |
-| 21 | MRSF-TDDFT | 発展 |
+| 21 | [MRSF-TDDFT](21-mrsf-tddft.md) | 発展 |
 | 22 | 円錐交差と非断熱過程 | 発展 |
