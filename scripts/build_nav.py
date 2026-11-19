@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 COURSES = [
     ("量子化学の理論", "qc-theory"),
+    ("化学反応の理論", "reactions"),
     ("遷移金属錯体の計算", "tm-complexes"),
     ("機械学習の基礎", "ml-basics"),
     ("量子化学のための機械学習", "ml-chem"),

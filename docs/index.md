@@ -77,6 +77,7 @@ hide:
 
 <div class="qc-tiles">
 <a class="qc-tile" href="courses/qc-theory/"><span class="qc-tile__en">Quantum Chemistry</span><span class="qc-tile__ja">量子化学の理論</span><span class="qc-tile__desc">波動関数理論、密度汎関数理論、励起状態、多参照理論</span></a>
+<a class="qc-tile" href="courses/reactions/"><span class="qc-tile__en">Chemical Reactions</span><span class="qc-tile__ja">化学反応の理論</span><span class="qc-tile__desc">遷移状態、反応速度、フロンティア軌道、Marcus 理論</span></a>
 <a class="qc-tile" href="courses/tm-complexes/"><span class="qc-tile__en">Transition Metals</span><span class="qc-tile__ja">遷移金属錯体の計算</span><span class="qc-tile__desc">d 電子、スピン状態、触媒反応</span></a>
 <a class="qc-tile" href="courses/ml-basics/"><span class="qc-tile__en">Machine Learning</span><span class="qc-tile__ja">機械学習の基礎</span><span class="qc-tile__desc">回帰からニューラルネットワーク、等変ネットワークまで</span></a>
 <a class="qc-tile" href="courses/ml-chem/"><span class="qc-tile__en">ML for Chemistry</span><span class="qc-tile__ja">量子化学のための機械学習</span><span class="qc-tile__desc">機械学習ポテンシャル、UMA などの基盤モデル</span></a>
