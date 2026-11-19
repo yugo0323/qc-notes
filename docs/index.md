@@ -34,6 +34,7 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.20</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/24-spin-orbit-coupling/">量子化学の理論 第 24 回「スピン軌道相互作用と項間交差」を公開しました（全 24 回がそろいました）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--info">新しいページ</span><a href="fields/">「研究分野」を公開しました（10 分野の雰囲気と常識を、図と 3D 図で紹介）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 1〜6 回を Szabo の順序に組み直しました（数学の回を新設、HF 法の回で RHF・UHF・ROHF を比較）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-19/">MRSF-TDDFT の解析的ヘッセ行列と励起状態ラマン</a></li>
