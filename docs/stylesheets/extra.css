@@ -352,3 +352,130 @@
   .qc-feature { grid-template-columns: 1fr; padding: 1.5rem 1.2rem; }
   .md-typeset a.qc-feature__img { transform: none; }
 }
+
+/* トップページ：画面いっぱいの見出しの帯（分子の点群のアニメーション） */
+.md-main { overflow-x: clip; }
+.qc-hero2 {
+  --qc-h2-bg: #f6f5f1;
+  --qc-h2-ink: #2f3a42;
+  --qc-h2-sub: #7b858d;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin: -2.5rem 0 2.4rem -50vw;
+  min-height: calc(100vh - 5.8rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 72% 45%, rgba(54, 181, 224, 0.10) 0, rgba(54, 181, 224, 0) 55%),
+    var(--qc-h2-bg);
+  border-bottom: 1px solid var(--qc-line);
+}
+[data-md-color-scheme="slate"] .qc-hero2 {
+  --qc-h2-bg: #0f1420;
+  --qc-h2-ink: #e6ebf3;
+  --qc-h2-sub: #95a0b3;
+}
+.qc-hero2 canvas {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+}
+.qc-hero2__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: min(61rem, 100vw);
+  margin: 0 auto;
+  padding: 3rem 1.6rem 4rem;
+  pointer-events: none;
+}
+.qc-hero2__inner a { pointer-events: auto; }
+.md-typeset .qc-hero2__kicker {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--qc-h2-sub);
+}
+.md-typeset .qc-hero2__title {
+  margin: 1.2rem 0 0;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: clamp(2.8rem, 7.6vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: var(--qc-h2-ink);
+}
+.md-typeset .qc-hero2__line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--qc-h2-sub);
+}
+.qc-hero2__line span { display: inline-block; width: 4rem; height: 1px; background: var(--qc-h2-sub); }
+.md-typeset .qc-hero2__ja { margin: 1.4rem 0 0; font-size: 0.82rem; line-height: 1.9; color: var(--qc-h2-ink); }
+.md-typeset .qc-hero2__btns { margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.md-typeset a.qc-btn2 {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: var(--qc-h2-ink);
+  color: var(--qc-h2-bg);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.md-typeset a.qc-btn2--ghost { background: transparent; color: var(--qc-h2-ink); border: 1px solid var(--qc-h2-ink); }
+.md-typeset a.qc-btn2:hover { transform: translateY(-2px); opacity: 0.85; }
+.md-typeset .qc-hero2__cap {
+  position: absolute;
+  right: 1.6rem;
+  bottom: 1rem;
+  margin: 0;
+  font-size: 0.56rem;
+  color: var(--qc-h2-sub);
+}
+.qc-scroll {
+  position: absolute;
+  left: 1.4rem;
+  bottom: 0;
+  height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.qc-scroll span {
+  writing-mode: vertical-rl;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
+  color: var(--qc-h2-sub);
+}
+.qc-scroll::after {
+  content: "";
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(var(--qc-h2-sub), transparent);
+  animation: qc-scroll 2.2s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes qc-scroll { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+@media (max-width: 44.9375em) {
+  .qc-hero2 canvas { width: 100%; opacity: 0.45; }
+  .qc-hero2 { min-height: calc(92vh - 3rem); }
+  .qc-scroll { display: none; }
+  .md-typeset .qc-hero2__cap { display: none; }
+  .md-typeset .qc-hero2__kicker { font-size: 0.55rem; letter-spacing: 0.1em; }
+}
+@media (prefers-reduced-motion: reduce) { .qc-scroll::after { animation: none; } }

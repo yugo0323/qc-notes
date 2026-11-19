@@ -7,14 +7,18 @@ hide:
 
 <h1 class="qc-sr-only">QCLab</h1>
 
-<div class="qc-hero" markdown>
-<p class="qc-hero__en">QCLAB</p>
-<p class="qc-hero__sub">Quantum Chemistry · Papers &amp; Lectures</p>
-<p class="qc-hero__ja">量子化学を、入門から最先端まで。毎日の論文紹介と、積み上げ式の講義ノート。</p>
-<a class="qc-btn" href="papers/">今日の論文を読む</a>
-<a class="qc-btn qc-btn--ghost" href="courses/">講義ノートへ</a>
-<a class="qc-btn qc-btn--ghost" href="fields/">研究分野を見る</a>
+<section class="qc-hero2">
+<canvas id="qc-mol" aria-hidden="true"></canvas>
+<div class="qc-hero2__inner">
+<p class="qc-hero2__kicker">PAPERS &amp; LECTURES IN QUANTUM CHEMISTRY</p>
+<p class="qc-hero2__title">Quantum<br>Chemistry<br>Lab</p>
+<p class="qc-hero2__line"><span></span>QCLAB</p>
+<p class="qc-hero2__ja">量子化学を、入門から最先端まで。<br>毎日の論文紹介、積み上げ式の講義ノート、研究分野の教養。</p>
+<p class="qc-hero2__btns"><a class="qc-btn2" href="papers/">今日の論文を読む</a><a class="qc-btn2 qc-btn2--ghost" href="courses/">講義ノート</a><a class="qc-btn2 qc-btn2--ghost" href="fields/">研究分野</a></p>
 </div>
+<p class="qc-hero2__cap">背景：ポルフィンの分子と、その最高被占軌道（HOMO）の電子の分布（RHF/STO-3G で計算）</p>
+<div class="qc-scroll"><span>SCROLL</span></div>
+</section>
 
 <div class="qc-sec"><span class="qc-sec__en">PICKUP</span><span class="qc-sec__ja">今日の論文</span></div>
 
