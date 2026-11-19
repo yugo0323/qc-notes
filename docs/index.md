@@ -16,7 +16,7 @@ hide:
 <p class="qc-hero2__ja">量子化学を、入門から最先端まで。<br>毎日の論文紹介、積み上げ式の講義ノート、研究分野の教養。</p>
 <p class="qc-hero2__btns"><a class="qc-btn2" href="papers/">今日の論文を読む</a><a class="qc-btn2 qc-btn2--ghost" href="courses/">講義ノート</a><a class="qc-btn2 qc-btn2--ghost" href="fields/">研究分野</a></p>
 </div>
-<p class="qc-hero2__cap">背景：ポルフィンの分子と、その最高被占軌道（HOMO）の電子の分布（RHF/STO-3G で計算）</p>
+<p class="qc-hero2__cap"><span id="qc-orb-label">ベンゼンの π 軌道</span><br>点は電子の分布 |ψ|²、色は波動関数の符号 (RHF/6-31G で計算)</p>
 <div class="qc-scroll"><span>SCROLL</span></div>
 </section>
 
