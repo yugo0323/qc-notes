@@ -140,6 +140,17 @@ nav:
           - "第 4 回　結果をグラフにする：Matplotlib": courses/tools/04-matplotlib.md
           - "第 5 回　Git と GitHub：変更の記録と共有": courses/tools/05-git-github.md
           - "第 6 回　Markdown と数式の書き方": courses/tools/06-markdown-math.md
-  - 研究分野: fields/index.md
+  - 研究分野:
+      - fields/index.md
+      - "計算理論：新しい計算方法をつくる研究": fields/01-theory-development.md
+      - "電子構造論：分子の電子状態を調べ、解釈する研究": fields/02-electronic-structure.md
+      - "反応と触媒：反応のしくみを計算で解き明かす研究": fields/03-reactions-catalysis.md
+      - "励起状態と光化学：光と分子の研究": fields/04-excited-states.md
+      - "分子スクリーニングと材料探索：たくさんの候補から、よい分子を選ぶ研究": fields/05-screening-materials.md
+      - "創薬と製薬：薬の候補を計算で探す研究": fields/06-drug-discovery.md
+      - "機械学習と量子化学：データで化学を速く、広くする研究": fields/07-machine-learning.md
+      - "生体分子と溶液：タンパク質と水の中の分子の研究": fields/08-biomolecules-solution.md
+      - "固体と表面：結晶、表面、材料の計算": fields/09-solids-surfaces.md
+      - "量子コンピュータと量子化学：新しい計算機で電子状態を解く研究": fields/10-quantum-computing.md
   - 用語集: glossary.md
   - このサイトについて: about.md

@@ -53,7 +53,16 @@ def main():
             m = re.search(r"^# (.+)$", f.read_text(encoding="utf-8"), re.M)
             title = m.group(1).strip() if m else f.stem
             lines.append(f"          - {q(title)}: courses/{slug}/{f.name}")
-    lines += ["  - 研究分野: fields/index.md", "  - 用語集: glossary.md", "  - このサイトについて: about.md", ""]
+    fields = sorted(f for f in (ROOT / "docs" / "fields").glob("[0-9][0-9]-*.md")
+                    if f.relative_to(ROOT).as_posix() in set(subprocess.run(["git", "ls-files", "docs/fields"], cwd=ROOT, capture_output=True, text=True).stdout.split()))
+    if fields:
+        lines += ["  - 研究分野:", "      - fields/index.md"]
+        for f in fields:
+            m = re.search(r"^# (.+)$", f.read_text(encoding="utf-8"), re.M)
+            lines.append(f"      - {q(m.group(1).strip() if m else f.stem)}: fields/{f.name}")
+    else:
+        lines += ["  - 研究分野: fields/index.md"]
+    lines += ["  - 用語集: glossary.md", "  - このサイトについて: about.md", ""]
 
     cfg = ROOT / "mkdocs.yml"
     text = cfg.read_text(encoding="utf-8")
