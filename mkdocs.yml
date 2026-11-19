@@ -85,6 +85,7 @@ nav:
           - "第 21 回　MRSF-TDDFT": courses/qc-theory/21-mrsf-tddft.md
           - "第 22 回　円錐交差と非断熱過程": courses/qc-theory/22-conical-intersections.md
           - "第 23 回　励起状態の波動関数法：EOM-CCSD、CC2、ADC(2)": courses/qc-theory/23-excited-wavefunction.md
+          - "第 24 回　スピン軌道相互作用と項間交差": courses/qc-theory/24-spin-orbit-coupling.md
       - 化学反応の理論: courses/reactions/index.md
       - 遷移金属錯体の計算:
           - courses/tm-complexes/index.md
