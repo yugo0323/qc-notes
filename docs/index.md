@@ -13,6 +13,7 @@ hide:
 <p class="qc-hero__ja">量子化学を、入門から最先端まで。毎日の論文紹介と、積み上げ式の講義ノート。</p>
 <a class="qc-btn" href="papers/">今日の論文を読む</a>
 <a class="qc-btn qc-btn--ghost" href="courses/">講義ノートへ</a>
+<a class="qc-btn qc-btn--ghost" href="fields/">研究分野を見る</a>
 </div>
 
 <div class="qc-sec"><span class="qc-sec__en">PICKUP</span><span class="qc-sec__ja">今日の論文</span></div>
@@ -29,6 +30,8 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--info">新しいページ</span><a href="fields/">「研究分野」を公開しました（10 分野の雰囲気と常識を、図と 3D 図で紹介）</a></li>
+<li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 1〜6 回を Szabo の順序に組み直しました（数学の回を新設、HF 法の回で RHF・UHF・ROHF を比較）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-19/">MRSF-TDDFT の解析的ヘッセ行列と励起状態ラマン</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-18/">F12 法で強相関を単一参照のまま扱う CCSD0-F12Pi</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 全 22 回を書き直しました（軌道の準位図・流れ図などの図を約 110 枚追加、行列の書き出し、導出の行間を補充）</a></li>
@@ -40,6 +43,31 @@ hide:
 </ul>
 <!-- NEWS:END -->
 <p class="qc-more"><a href="papers/">論文紹介の一覧 →</a></p>
+
+<div class="qc-sec"><span class="qc-sec__en">FIELDS</span><span class="qc-sec__ja">研究分野</span></div>
+
+<div class="qc-feature">
+<div class="qc-feature__text">
+<p class="qc-feature__en">FIELD MAP</p>
+<p class="qc-feature__ja">隣の研究の「常識」が分かる。</p>
+<p class="qc-feature__desc">量子化学の研究室で行われている研究を 10 の分野に分け、それぞれが何を目指し、どんな道具を使い、どんなことが常識なのかを、図と 3D 図で紹介します。研究室に入ったばかりの人のための教養のページです。</p>
+<a class="qc-btn" href="fields/">分野の地図を見る</a>
+</div>
+<a class="qc-feature__img" href="fields/"><img src="fields/img/00-map.png" alt="量子化学の研究分野の地図"></a>
+</div>
+
+<div class="qc-fields">
+<a class="qc-field" href="fields/01-theory-development/" style="--qc-f: #2a78d6"><span class="qc-field__no">01</span><span class="qc-field__en">Method Development</span><span class="qc-field__ja">計算理論</span><span class="qc-field__desc">新しい計算方法をつくる</span></a>
+<a class="qc-field" href="fields/02-electronic-structure/" style="--qc-f: #1f8f9b"><span class="qc-field__no">02</span><span class="qc-field__en">Electronic Structure</span><span class="qc-field__ja">電子構造論</span><span class="qc-field__desc">電子状態を調べ、解釈する</span></a>
+<a class="qc-field" href="fields/03-reactions-catalysis/" style="--qc-f: #eb6834"><span class="qc-field__no">03</span><span class="qc-field__en">Reactions & Catalysis</span><span class="qc-field__ja">反応と触媒</span><span class="qc-field__desc">反応のしくみを解き明かす</span></a>
+<a class="qc-field" href="fields/04-excited-states/" style="--qc-f: #c8323c"><span class="qc-field__no">04</span><span class="qc-field__en">Photochemistry</span><span class="qc-field__ja">励起状態と光化学</span><span class="qc-field__desc">光と分子</span></a>
+<a class="qc-field" href="fields/05-screening-materials/" style="--qc-f: #2e9e5b"><span class="qc-field__no">05</span><span class="qc-field__en">Screening & Materials</span><span class="qc-field__ja">分子スクリーニングと材料</span><span class="qc-field__desc">候補から、よい分子を選ぶ</span></a>
+<a class="qc-field" href="fields/06-drug-discovery/" style="--qc-f: #b0457a"><span class="qc-field__no">06</span><span class="qc-field__en">Drug Discovery</span><span class="qc-field__ja">創薬と製薬</span><span class="qc-field__desc">薬の候補を計算で探す</span></a>
+<a class="qc-field" href="fields/07-machine-learning/" style="--qc-f: #5b6475"><span class="qc-field__no">07</span><span class="qc-field__en">Machine Learning</span><span class="qc-field__ja">機械学習</span><span class="qc-field__desc">データで速く、広く</span></a>
+<a class="qc-field" href="fields/08-biomolecules-solution/" style="--qc-f: #6b8e23"><span class="qc-field__no">08</span><span class="qc-field__en">Biomolecules</span><span class="qc-field__ja">生体分子と溶液</span><span class="qc-field__desc">タンパク質と水の中の分子</span></a>
+<a class="qc-field" href="fields/09-solids-surfaces/" style="--qc-f: #8a6d3b"><span class="qc-field__no">09</span><span class="qc-field__en">Solids & Surfaces</span><span class="qc-field__ja">固体と表面</span><span class="qc-field__desc">結晶、表面、材料</span></a>
+<a class="qc-field" href="fields/10-quantum-computing/" style="--qc-f: #7a4fc0"><span class="qc-field__no">10</span><span class="qc-field__en">Quantum Computing</span><span class="qc-field__ja">量子コンピュータ</span><span class="qc-field__desc">新しい計算機で電子状態を解く</span></a>
+</div>
 
 <div class="qc-sec"><span class="qc-sec__en">COURSES</span><span class="qc-sec__ja">講義ノート</span></div>
 
