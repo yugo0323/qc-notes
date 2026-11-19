@@ -11,7 +11,7 @@
     | 3 | 遷移金属触媒・均一系触媒 | 触媒サイクル、律速段階、エネルギースパン |
     | 4 | 光触媒・光レドックス触媒 | 励起状態の酸化還元、HAT、機械学習による触媒探索 |
     | 5 | プロトン共役電子移動 | 電子と H⁺ の協奏的な移動、振電結合 |
-    | 6 | 金属酵素とゼオライト | 多核の金属中心、メタンの水酸化、多参照法 |
+    | 6 | 金属酵素とゼオライト | 多核の金属中心、メタンの水酸化、金属オキソ種、多参照法 |
     | 7 | 反応経路の自動探索 | GRRM、AFIR、反応経路の網目 |
 
 !!! tip "ひとことで言うと"
@@ -248,11 +248,43 @@ DFT の結果は汎関数によって大きく変わることがあり、CASSCF 
 
 **図 10**　Cu-CHA ゼオライトでのメタンの C–H 開裂の 2 つの経路の活性化エンタルピー（DMRG/cu(4)-CASPT2）。Phung et al.（2025）の要旨の値から作図。どちらの経路を選ぶかで、障壁が 9 kcal/mol 近く違います。Eyring 式で考えると、速度にして 10⁶ 倍ほどの違いです。
 
-### 6.4 この界隈の常識
+### 6.4 高原子価の金属オキソ種と C–H 結合の活性化
+
+**何が起きているか**：シトクロム P450 などの酵素や、それをまねた合成の錯体では、酸化数の高い金属に酸素原子が 1 個結合した**金属オキソ種**（Fe(IV)=O、Mn(V)=O など）が、強い C–H 結合を切ります。
+最初の段階は多くの場合、**水素原子移動**（HAT）です。
+C–H 結合の水素が、プロトンと電子の組（つまり水素原子）として酸素に移り、M–OH と炭素ラジカルができます（図 11 の左）。
+計算で知りたいのは、この峠の高さ（障壁）と、その高さが金属や配位子でどう変わるかです。
+
+**なぜ難しいか**：金属オキソ種は開殻（不対電子をもつ）で、近いエネルギーに複数のスピン状態があります。
+反応の途中で、スピン状態が入れかわることもあります。
+2 つのスピン状態の曲面が交わる点を **MECP**（minimum energy crossing point、交差点のうち最もエネルギーの低い点）と呼びます（図 11 の右）。
+さらに、酸化された電子 1 個分の「穴」が、金属にあるか配位子にあるかで、性格の違う状態ができます。
+このように、電子の置き場所だけが違う状態を**電子異性体**（electromer）と呼びます（図 12）。
+こうした状態の順番は汎関数で変わりやすいので、多参照法の値を基準にします。
+
+![水素原子移動とスピン状態](img/03-hat-spin.png)
+
+**図 11**　(a) 鉄(IV)–オキソ種によるメタンの水素原子移動の 3 つの段階（模式図）。遷移状態では、H が O と C の間にあります。(b) 2 つのスピン状態の曲面（模式図）。基底状態（青）の曲面だけをたどると峠は高いのですが、交差点（MECP）で別のスピン状態（橙）の曲面に乗りかえると、低い峠を越えられます。
+
+![電子異性体](img/03-electromer.png)
+
+**図 12**　塩化物が配位した鉄–オキソポルフィリン（Compound I のモデル）の 2 つの電子異性体（模式図）。橙色の部分に、酸化で失われた電子 1 個分の「穴」があります。左は穴がポルフィリン環にある Fe(IV)=O、右は穴が鉄とオキソの部分にある Fe(V)=O です。右端は、Phung と Pierloot（2019）の要旨にある順番（四重項の Fe(IV)=O が基底状態で、二重項の Fe(V)=O が熱で届く高さにある）を表したもので、間隔は模式的です。
+
+**代表的な研究例**
+
+- **鉄(IV)–オキソ錯体の HAT の障壁**：Austen, Yanai, Phung（2026）は、10 種類の Fe(IV)=O 錯体によるメタンの HAT を、DFT と多参照の CASPT2 で調べ、活性化自由エネルギーの基準値を求めました。障壁は、H が移る方向の原子間の距離とは強く相関しましたが、オキソのラジカル性とは弱くしか相関しませんでした。配位数が小さく、基底状態が S = 2 の [Fe(IV)O(ᵗBu₃tacn)]²⁺ が、室温でメタンを活性化できる有望な触媒だと予測しています。CASPT2 を基準に DFT の汎関数を比べると、誤差は経路によって大きく違いました。いくつかの汎関数は主な経路では正確でしたが、ほかの経路の障壁を系統的に低く見積もりました。また、DFT の平均絶対誤差は、汎関数に混ぜるハートリー–フォック交換の割合と強い直線関係があり、割合の大きい汎関数ほど障壁の誤差が大きくなりました [Austen 2026]。
+- **Compound I のモデルの電子異性体**：Phung と Pierloot（2019）は、P450 の活性種 Compound I のモデルである、塩化物が配位した鉄(IV)–オキソポルフィリンのスピン状態のエネルギーを、DMRG-CASPT2 で調べました。活性空間は最大 31 軌道です。タンパク質の環境の補正を加えると、四重項の Fe(IV)=O が基底状態で、二重項の Fe(V)=O の励起状態が熱で届く高さにあることが分かりました。この Fe(V)=O の状態が、反応性に直接関わる可能性があります。小さな活性空間の CASPT2 や、安価な近似（cu(4)）の DMRG-CASPT2 でも、スピン状態のエネルギーを正確に表せることも示しています [Phung 2019a]（図 12）。
+- **窒素で橋かけされた二核の鉄–オキソ種**：Phung と Pierloot（2019）は、メタンの H 引き抜きを起こす、窒素で橋かけされた高原子価の二核鉄–オキソ種を、DFT と DMRG-CASPT2 で調べました。2 個の鉄がともに Fe(IV) の基底状態のすぐ上に、Fe(V)–Fe(IV) の混合原子価の状態が低いエネルギーにあることを見つけました。電子構造とスピン密度から、この励起状態のほうが H 引き抜きの反応性がずっと高いと考えられ、メタンに対する高い反応性の理由の候補になっています [Phung 2019b]。
+- **Mn–オキソポルフィリンによる水酸化**：Ricciarelli, Phung, Harvey ら（2019）は、Mn(V)–オキソポルフィリンによるトルエンの水酸化を計算で調べました。最初に、Mn(V)=O 種が一重項から三重項へ、熱で越えられる障壁で乗りかわり（MECP）、三重項の状態がとても容易に H を引き抜くことを示しました（図 11 の右と同じ形）。DFT（BP86）の一重項–三重項のエネルギー差は、DMRG-CASPT2/CC の値で妥当性を確かめています。軸配位子のトランス影響が、この一重項–三重項のエネルギー差を通して反応性を決めることも示しました [Ricciarelli 2019]。
+- **[NiFe] ヒドロゲナーゼの反応機構**：Dong, Phung, Pierloot, Ryde（2018）は、H₂ とプロトンと電子を可逆的に変換する [NiFe] ヒドロゲナーゼの反応機構の全体を調べました。構造は QM/MM で求め、819 原子を量子力学で扱う big-QM 計算でエネルギーを精密化し、QM/MM の熱力学サイクルの摂動計算で自由エネルギーを出しています。各状態の電子構造は DMRG-CASSCF で調べました。律速段階は、架橋のヒドリドがプロトンとしてシステインの硫黄に移り、2 電子が Ni に移る段階で、障壁は 58 kJ/mol でした。これは実験の速度（750 ± 90 s⁻¹、約 52 kJ/mol に相当）と合います。H–H 結合の開裂の障壁は 33 kJ/mol で、容易に進みます。反応エネルギーは、QM の領域の大きさ、基底関数、汎関数に敏感でした [Dong 2018]。
+
+### 6.5 この界隈の常識
 
 - 金属酵素や金属触媒の反応機構の結論は、汎関数に依存することがあります。1 つの汎関数（とくに B3LYP だけ）に頼った結論には注意が必要です [Phung 2025]。
 - クラスターモデルの大きさ（どこまでのまわりの原子を含めるか）で結果が変わります。大きさを変えて確かめます。
 - 多核の金属中心では、スピンの組み合わせ（どの金属のスピンが上向きか下向きか）が多く、それぞれを計算します。
+- 金属オキソ種の反応では、基底状態だけでなく、近くにある別のスピン状態や電子異性体も反応に関わることがあります。反応の途中でのスピン状態の乗りかえ（MECP）も調べます [Ricciarelli 2019]。
+- HAT の障壁の DFT の誤差は、経路と、ハートリー–フォック交換の割合で変わります。1 つの経路の比較だけで汎関数を選ばないようにします [Austen 2026]。
 
 ## 7. 反応経路の自動探索
 
@@ -270,7 +302,7 @@ GRRM では、2 つの相補的な方法を使います。
 
 ![AFIR の考え方](img/03-afir.png)
 
-**図 11**　AFIR の考え方（模式図）。左：もとの曲面（青）に、反応座標に比例する人工の力を加えると（赤の破線）、障壁がほとんどなくなり、隣の谷へ移れます。右：このような探索をくり返して得られる、平衡構造（点）と経路（線）の網目。
+**図 13**　AFIR の考え方（模式図）。左：もとの曲面（青）に、反応座標に比例する人工の力を加えると（赤の破線）、障壁がほとんどなくなり、隣の谷へ移れます。右：このような探索をくり返して得られる、平衡構造（点）と経路（線）の網目。
 
 ### 7.2 代表的な研究例
 
@@ -301,6 +333,9 @@ GRRM では、2 つの相補的な方法を使います。
 | HAT | 水素原子移動。結合から水素原子（H⁺ + e⁻）を引き抜く |
 | PCET、CPET | プロトン共役電子移動と、その協奏的なもの |
 | クラスターモデル | 活性中心のまわりだけを切り出して計算するモデル |
+| 金属オキソ種 | 酸化数の高い金属に酸素原子が 1 個結合した活性種。Fe(IV)=O など |
+| MECP | 2 つのスピン状態の曲面の交わりのうち、最もエネルギーの低い点。スピン状態が乗りかわる場所 |
+| 電子異性体（エレクトロマー） | 原子の並びは同じで、電子（または穴）の置き場所だけが違う状態 |
 | GRRM、ADDF、AFIR | 反応経路の自動探索の戦略と方法 |
 
 ## この分野の常識：まとめ
@@ -355,6 +390,11 @@ GRRM では、2 つの相補的な方法を使います。
 - Y. Kurashige, G. K.-L. Chan, T. Yanai, "Entangled quantum electronic wavefunctions of the Mn4CaO5 cluster in photosystem II", Nat. Chem. 5, 660 (2013). DOI: [10.1038/nchem.1677](https://doi.org/10.1038/nchem.1677)
 - J. S. Woertink, P. J. Smeets, M. H. Groothaert, M. A. Vance, B. F. Sels, R. A. Schoonheydt, E. I. Solomon, "A [Cu2O]2+ core in Cu-ZSM-5, the active site in the oxidation of methane to methanol", Proc. Natl. Acad. Sci. USA 106, 18908 (2009). DOI: [10.1073/pnas.0910461106](https://doi.org/10.1073/pnas.0910461106)
 - Q. M. Phung, T. Yanai, D. Plessers, B. F. Sels, R. A. Schoonheydt, K. Pierloot, "Homolytic versus Heterolytic Methane Hydroxylation in Copper Zeolites", ACS Catal. 15, 1249 (2025). DOI: [10.1021/acscatal.4c06246](https://doi.org/10.1021/acscatal.4c06246)
+- V. Austen, T. Yanai, Q. M. Phung, "Hydrogen Atom Transfer Barriers by High-Valent Iron(IV)–Oxo Complexes: A DFT and Multireference Ab Initio Study", Inorg. Chem. 65, 11853 (2026). DOI: [10.1021/acs.inorgchem.6c01138](https://doi.org/10.1021/acs.inorgchem.6c01138)
+- Q. M. Phung, K. Pierloot, "Low-Lying Electromeric States in Chloro-Ligated Iron(IV)-Oxo Porphyrin as a Model for Compound I, Studied with Second-Order Perturbation Theory Based on Density Matrix Renormalization Group", J. Chem. Theory Comput. 15, 3033 (2019). DOI: [10.1021/acs.jctc.9b00166](https://doi.org/10.1021/acs.jctc.9b00166)
+- Q. M. Phung, K. Pierloot, "Electronic Structure of N-Bridged High-Valent Diiron-Oxo", Chem. Eur. J. 25, 12491 (2019). DOI: [10.1002/chem.201902766](https://doi.org/10.1002/chem.201902766)
+- D. Ricciarelli, Q. M. Phung, L. Belpassi, J. N. Harvey, P. Belanzoni, "Understanding the Reactivity of Mn-Oxo Porphyrins for Substrate Hydroxylation: Theoretical Predictions and Experimental Evidence Reconciled", Inorg. Chem. 58, 7345 (2019). DOI: [10.1021/acs.inorgchem.9b00476](https://doi.org/10.1021/acs.inorgchem.9b00476)
+- G. Dong, Q. M. Phung, K. Pierloot, U. Ryde, "Reaction Mechanism of [NiFe] Hydrogenase Studied by Computational Methods", Inorg. Chem. 57, 15289 (2018). DOI: [10.1021/acs.inorgchem.8b02590](https://doi.org/10.1021/acs.inorgchem.8b02590)
 - A. L. Dewyer, A. J. Argüelles, P. M. Zimmerman, "Methods for exploring reaction space in molecular systems", WIREs Comput. Mol. Sci. 8, e1354 (2017). DOI: [10.1002/wcms.1354](https://doi.org/10.1002/wcms.1354)
 - S. Maeda, K. Ohno, K. Morokuma, "Systematic exploration of the mechanism of chemical reactions: the global reaction route mapping (GRRM) strategy using the ADDF and AFIR methods", Phys. Chem. Chem. Phys. 15, 3683 (2013). DOI: [10.1039/C3CP44063J](https://doi.org/10.1039/C3CP44063J)
 - S. Maeda, Y. Harabuchi, M. Takagi, T. Taketsugu, K. Morokuma, "Artificial Force Induced Reaction (AFIR) Method for Exploring Quantum Chemical Potential Energy Surfaces", Chem. Rec. 16, 2232 (2016). DOI: [10.1002/tcr.201600043](https://doi.org/10.1002/tcr.201600043)
