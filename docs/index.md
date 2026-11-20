@@ -25,8 +25,8 @@ hide:
 <!-- PICKUP:START -->
 <div class="qc-pickup">
 <span class="qc-chip qc-chip--paper">論文紹介</span>
-<p class="qc-pickup__title"><a href="papers/2026/2026-11-19/">MRSF-TDDFT の解析的ヘッセ行列と励起状態ラマン</a></p>
-<p class="qc-pickup__meta">2026.11.19　ChemRxiv（プレプリント、査読前）</p>
+<p class="qc-pickup__title"><a href="papers/2026/2026-11-20/">遷移金属錯体の軌道エネルギーを少ないデータで学習する</a></p>
+<p class="qc-pickup__meta">2026.11.20　arXiv（プレプリント、査読前）</p>
 </div>
 <!-- PICKUP:END -->
 
@@ -34,17 +34,14 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.20</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-20/">遷移金属錯体の軌道エネルギーを少ないデータで学習する</a></li>
+<li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-19/">MRSF-TDDFT の解析的ヘッセ行列と励起状態ラマン</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/24-spin-orbit-coupling/">量子化学の理論 第 24 回「スピン軌道相互作用と項間交差」を公開しました（全 24 回がそろいました）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--info">新しいページ</span><a href="fields/">「研究分野」を公開しました（10 分野の雰囲気と常識を、図と 3D 図で紹介）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 1〜6 回を Szabo の順序に組み直しました（数学の回を新設、HF 法の回で RHF・UHF・ROHF を比較）</a></li>
-<li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-19/">MRSF-TDDFT の解析的ヘッセ行列と励起状態ラマン</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-18/">F12 法で強相関を単一参照のまま扱う CCSD0-F12Pi</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 全 22 回を書き直しました（軌道の準位図・流れ図などの図を約 110 枚追加、行列の書き出し、導出の行間を補充）</a></li>
 <li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/23-excited-wavefunction/">量子化学の理論 第 23 回「励起状態の波動関数法：EOM-CCSD、CC2、ADC(2)」を公開しました</a></li>
-<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 19〜22 回を公開しました（TDDFT、スピン反転、MRSF-TDDFT、円錐交差。全 22 回がそろいました）</a></li>
-<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 12〜18 回を公開しました（CASSCF から DFT の誤差まで）</a></li>
-<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/tm-complexes/">遷移金属錯体の計算 第 6〜10 回を公開しました（ベンチマークから多参照の計算まで）</a></li>
-<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/ml-chem/">量子化学のための機械学習 第 6〜10 回を公開しました（データセットから使うときの注意まで）</a></li>
 </ul>
 <!-- NEWS:END -->
 <p class="qc-more"><a href="papers/">論文紹介の一覧 →</a></p>
