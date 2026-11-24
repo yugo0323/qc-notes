@@ -25,8 +25,8 @@ hide:
 <!-- PICKUP:START -->
 <div class="qc-pickup">
 <span class="qc-chip qc-chip--paper">論文紹介</span>
-<p class="qc-pickup__title"><a href="papers/2026/2026-11-23/">吸着エネルギーを 1 回で予測する局所グラフ型 GNN</a></p>
-<p class="qc-pickup__meta">2026.11.23　arXiv（プレプリント、査読前）</p>
+<p class="qc-pickup__title"><a href="papers/2026/2026-11-24/">スピン対称性の制約で結合クラスター法を強相関へ</a></p>
+<p class="qc-pickup__meta">2026.11.24　arXiv（プレプリント、査読前）</p>
 </div>
 <!-- PICKUP:END -->
 
@@ -34,6 +34,7 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.24</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-24/">スピン対称性の制約で結合クラスター法を強相関へ</a></li>
 <li><span class="qc-news__date">2026.11.23</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-23/">吸着エネルギーを 1 回で予測する局所グラフ型 GNN</a></li>
 <li><span class="qc-news__date">2026.11.22</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-22/">基盤ポテンシャルは疲労き裂の挙動を再現するか</a></li>
 <li><span class="qc-news__date">2026.11.20</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-20/">遷移金属錯体の軌道エネルギーを少ないデータで学習する</a></li>
@@ -41,7 +42,6 @@ hide:
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/24-spin-orbit-coupling/">量子化学の理論 第 24 回「スピン軌道相互作用と項間交差」を公開しました（全 24 回がそろいました）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--info">新しいページ</span><a href="fields/">「研究分野」を公開しました（10 分野の雰囲気と常識を、図と 3D 図で紹介）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/">量子化学の理論 第 1〜6 回を Szabo の順序に組み直しました（数学の回を新設、HF 法の回で RHF・UHF・ROHF を比較）</a></li>
-<li><span class="qc-news__date">2026.11.18</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-18/">F12 法で強相関を単一参照のまま扱う CCSD0-F12Pi</a></li>
 </ul>
 <!-- NEWS:END -->
 <p class="qc-more"><a href="papers/">論文紹介の一覧 →</a></p>
