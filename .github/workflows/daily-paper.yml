@@ -62,6 +62,7 @@ jobs:
               "Edit(docs/papers/**)" \
               "WebFetch(domain:arxiv.org)" "WebFetch(domain:export.arxiv.org)" \
               "WebFetch(domain:chemrxiv.org)" "WebFetch(domain:api.crossref.org)" \
+              "WebFetch(domain:api.openalex.org)" \
             --output-format text | tail -n 30
 
       - name: 変更が記事 1 本だけであることを確かめる
