@@ -25,8 +25,8 @@ hide:
 <!-- PICKUP:START -->
 <div class="qc-pickup">
 <span class="qc-chip qc-chip--paper">論文紹介</span>
-<p class="qc-pickup__title"><a href="papers/2026/2026-11-27/">MRSF-TDDFT の溶媒効果：参照の食い違いを補正する</a></p>
-<p class="qc-pickup__meta">2026.11.27　ChemRxiv（プレプリント、査読前）</p>
+<p class="qc-pickup__title"><a href="papers/2026/2026-11-28/">二重混成の MC-PDFT：CASSCF に NEVPT2 を混ぜる</a></p>
+<p class="qc-pickup__meta">2026.11.28　Journal of Chemical Theory and Computation</p>
 </div>
 <!-- PICKUP:END -->
 
@@ -34,12 +34,12 @@ hide:
 
 <!-- NEWS:START -->
 <ul class="qc-news">
+<li><span class="qc-news__date">2026.11.28</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-28/">二重混成の MC-PDFT：CASSCF に NEVPT2 を混ぜる</a></li>
 <li><span class="qc-news__date">2026.11.27</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-27/">MRSF-TDDFT の溶媒効果：参照の食い違いを補正する</a></li>
 <li><span class="qc-news__date">2026.11.26</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-26/">二重励起を扱う TDDFT：Dressed TDDFT を実用に近づける</a></li>
 <li><span class="qc-news__date">2026.11.25</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-25/">TAO-DFT の仮想温度を、スピン対称性から決める</a></li>
 <li><span class="qc-news__date">2026.11.24</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-24/">スピン対称性の制約で結合クラスター法を強相関へ</a></li>
 <li><span class="qc-news__date">2026.11.23</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-23/">吸着エネルギーを 1 回で予測する局所グラフ型 GNN</a></li>
-<li><span class="qc-news__date">2026.11.22</span><span class="qc-chip qc-chip--paper">論文紹介</span><a href="papers/2026/2026-11-22/">基盤ポテンシャルは疲労き裂の挙動を再現するか</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--course">講義ノート</span><a href="courses/qc-theory/24-spin-orbit-coupling/">量子化学の理論 第 24 回「スピン軌道相互作用と項間交差」を公開しました（全 24 回がそろいました）</a></li>
 <li><span class="qc-news__date">2026.11.19</span><span class="qc-chip qc-chip--info">新しいページ</span><a href="fields/">「研究分野」を公開しました（10 分野の雰囲気と常識を、図と 3D 図で紹介）</a></li>
 </ul>
